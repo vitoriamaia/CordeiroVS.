@@ -1,0 +1,17 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\wp-content",
+    "\\wp-content\\plugins\\wp-maintenance-mode",
+    "\\wp-content\\plugins\\wp-maintenance-mode\\assets",
+    "\\wp-content\\themes",
+    "\\wp-content\\themes\\base",
+    "\\wp-content\\themes\\base\\app",
+    "\\wp-content\\themes\\base\\app\\widgets",
+    "\\wp-content\\themes\\base\\assets",
+    "\\wp-content\\themes\\base\\assets\\scss",
+    "\\wp-content\\themes\\base\\assets\\scss\\sections"
+  ],
+  "SelectedNode": "\\wp-content\\themes\\base\\assets\\scss\\sections\\_header.scss",
+  "PreviewInSolutionExplorer": false
+}

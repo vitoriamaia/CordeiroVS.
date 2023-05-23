@@ -1,0 +1,80 @@
+<?php
+
+global $wpdb;
+$id_item = $_GET['id'];
+
+$regions = apply_filters('select_table', 'regions');
+$unities = apply_filters('select_table_id', 'unities', $id_item);
+foreach ($unities as $unity) : ?>
+
+    <h2 id="titulo-unity">Editar unidade <?php echo $unity->unidade; ?></h2>
+
+    <form action="<?php echo admin_url('admin-ajax.php?action=save_unities'); ?>" class="register_form" method="post" accept-charset="utf-8">
+        <p>
+            <label for="unidade">
+                <strong>Unidade</strong>
+            </label> <br/>
+            <input type="text" name="unidade" id="unidade" value="<?php echo $unity->unidade; ?>" required="required"/>
+        </p>
+
+        <p>
+            <label for="endereco">
+                <strong>Endereço</strong>
+            </label> <br/>
+            <input type="text" name="endereco" id="endereco" value="<?php echo $unity->endereco; ?>" required="required"/>
+        </p>
+
+        <p>
+            <label for="estado">
+                <strong>Estado</strong>
+            </label> <br/>
+            <select name="estado" id="estado" value="<?php echo $unity->estado; ?>"></select>
+        </p>
+
+        <p>
+            <label for="cidade">
+                <strong>Cidade</strong>
+            </label> <br/>
+            <select name="cidade" id="cidade" value="<?php echo $unity->cidade; ?>"></select>
+        </p>
+
+        <script language="JavaScript" type="text/javascript" charset="utf-8">
+            new dgCidadesEstados({
+                cidade: document.getElementById('cidade'),
+                estado: document.getElementById('estado')
+            })
+        </script>
+
+        <p>
+            <label for="regiao">
+                <strong>Região</strong>
+            </label> <br/>
+            <select name="regiao" id="regiao">
+
+                <?php
+                if ($regions) : foreach ($regions as $region) :
+                    $region_id = $region->id;
+                    $region_id_current = $unity->regiao;
+                    $selected = ($region_id == $region_id_current) ? "selected='selected'" : "";
+                    ?>
+
+                    <option value="<?php echo $region_id ?>" <?php echo $selected ?>><?php echo $region->regioes ?></option>
+
+                <?php endforeach; ?>
+
+                <?php else : ?>
+
+                    <option value="">Nenhuma região cadastrada</option>
+
+                <?php endif; ?>
+
+            </select>
+        </p>
+        <p>
+            <input type="submit" id="incluir_reg" class="button button-primary button-large" value="Salvar"/>
+        </p>
+
+        <input type="hidden" name="id" id="id" value="<?php echo $id_item; ?>" />
+    </form>
+
+<?php endforeach;

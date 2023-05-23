@@ -1,0 +1,43 @@
+/*
+|----------------------------------------------
+| Components
+|----------------------------------------------
+*/
+
+
+// modal
+.modal {
+  background: #fff;
+  &-content {
+    box-shadow: inherit $imp;
+    border: 0 $imp;
+  }
+  &-header, &-footer {
+    border: 0;
+  }
+
+  &-title {
+    margin-bottom: 35px;
+  }
+
+  &-dialog {
+    width: inherit $imp;
+  }
+  &-body {
+    width: 600px;
+    margin: -75px auto 0;
+  }
+
+}
+
+button.close {
+  width: 64px;
+  height: 64px;
+  background: url('../images/close.png') center no-repeat;
+  position: relative;
+  z-index: 999;
+  span {
+    display: none
+  }
+}
+

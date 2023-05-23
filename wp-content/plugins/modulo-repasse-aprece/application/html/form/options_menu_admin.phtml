@@ -1,0 +1,77 @@
+<?php
+
+$month = Array(
+    1 => "Janeiro", 2 => "Fevereiro", 3 => "Março", 4 => "Abril", 5 => "Maio", 6 => "Junho",
+    7 => "Julho", 8 => "Agosto", 9 => "Setembro", 10 => "Outubro", 11 => "Novembro", 12 => "Dezembro");
+
+?>
+
+<div class="wrap repasse">
+    <h2>Finan&ccedil;as P&uacute;blicas</h2>
+
+    <form method="post" accept-charset="utf-8" enctype="multipart/form-data" id="form-repasse"
+          action="<?php echo admin_url('admin-ajax.php?action=submit_csv'); ?>">
+
+        <table>
+            <tbody>
+            <tr height="20">
+                <td align="right" valign="middle">Arquivo .CSV:</td>
+                <td align="left" valign="middle">
+                    <input type="file" name="txtfile" id="csvfile">
+                </td>
+            </tr>
+            <tr height="20">
+                <td align="right" valign="middle">Mês:</td>
+                <td align="left" valign="middle">
+                    <label>
+                        <select name="mes" id="mes">
+                            <?php
+                            foreach ($month as $key => $desc)
+                                echo "<option value='{$key}'>{$desc}</option>";
+                            ?>
+                        </select>
+                    </label>
+                </td>
+            </tr>
+            <tr height="20">
+                <td align="right" valign="middle">Ano:</td>
+                <td align="left" valign="middle">
+                    <label>
+                        <select name="ano" id="ano">
+                            <?php
+                            for ($i = date("Y"); $i >= 1996; $i--) {
+                                echo "<option value='{$i}'>{$i}</option>";
+                            }
+                            ?>
+                        </select>
+                    </label>
+                </td>
+            </tr>
+
+            <tr height="20">
+                <td align="right" valign="middle">Repasse:</td>
+                <td align="left" valign="middle">
+                    <label>
+                        <select name="tipo" id="tipo">
+                            <option value="0" selected="selected">Selecione o repasse...</option>
+                            <option value="1">ICMS</option>
+                            <option value="2">FPM</option>
+                        </select>
+                    </label>
+                </td>
+            </tr>
+
+            <tr height="20">
+                <td align="right" valign="middle"></td>
+                <td align="left" valign="middle">
+                    <input name="Submit" type="button" id="submit-csv" value="Importar CSV"
+                           onclick="comprova_extensao(this.form, this.form.txtfile.value)">
+                </td>
+            </tr>
+
+            </tbody>
+        </table>
+
+    </form>
+
+</div>

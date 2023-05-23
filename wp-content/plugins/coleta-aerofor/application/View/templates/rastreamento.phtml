@@ -1,0 +1,54 @@
+<a href="<?php echo admin_url('admin-ajax.php?action=logout') ?>" class="logout"> Sair</a>
+<?php
+
+$result = new Controller_Collect();
+$content = $result->display_tracking();
+
+while($row = mysqli_fetch_assoc($content)) {
+    var_dump($row);
+}
+
+/*
+while ($linha = $content->fetch(PDO::FETCH_ASSOC)) {
+
+    $empresa = $linha["EMPRESA"];
+    $filial = $linha["FILIAL"];
+    $codigo = $linha["CODIGO"];
+    $razao = $linha["RAZAO"];
+    $faturamento = $linha["VER_FAT"];
+    $cnpj = $linha["CNPJ"];
+    $sigla = $linha["SIGLA"];
+    $cidade = $linha["CIDADE"];
+    $uf = $linha["UF"];
+    ?>
+
+    <div class="content">
+        <a href = "<?php echo admin_url( 'admin-ajax.php?action=logout' ) ?>" class="logout" > Sair</a>
+
+        <div class="content_int">
+            <dl>
+                <dt>Raz&atilde;o Social</dt>
+                <dd><?php echo $razao ?></dd>
+
+                <dt>CNPJ</dt>
+                <dd><?php echo $cnpj ?></dd>
+
+                <dt>Sigla</dt>
+                <dd><?php echo $sigla ?></dd>
+
+                <dt>Cidade</dt>
+                <dd><?php echo $cidade ?></dd>
+
+                <dt>Estado</dt>
+                <dd><?php echo $uf ?></dd>
+
+                <dt>Faturamento</dt>
+                <dd><?php echo $faturamento ?></dd>
+            </dl>
+        </div>
+    </div>
+
+<?php
+}*/
+
+?>

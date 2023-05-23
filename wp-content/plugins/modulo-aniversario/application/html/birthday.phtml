@@ -1,0 +1,63 @@
+<?php $month = Array(1 => "Jan", 2 => "Fev", 3 => "Mar", 4 => "Abr", 5 => "Mai", 6 => "Jun", 7 => "Jul", 8 => "Ago", 9 => "Set", 10 => "Out", 11 => "Nov", 12 => "Dez"); ?>
+
+<div class="area-birthday">
+    <!-- Nav tabs -->
+    <ul class="nav nav-tabs nav-justified nav-tabs-birthday" role="tablist">
+        <li role="presentation" class="active ">
+            <a href="#mayors" aria-controls="mayors" class="mayors" role="tab" data-toggle="tab">
+                Prefeitos Aniversariantes
+            </a>
+        </li>
+        <li role="presentation">
+            <a href="#counties" aria-controls="counties" class="counties" role="tab" data-toggle="tab">
+                Municípios Aniversariantes
+            </a>
+        </li>
+    </ul>
+    <!-- Tab panes -->
+    <div class="tab-content">
+
+        <div role="tabpanel" class="tab-pane active" id="mayors">
+            <div class="content-tab">
+                <!-- Nav tabs -->
+                <ul class="nav nav-tabs nav-tabs-month nav_month" role="tablist">
+                    <?php for ($i = 1; $i <= 12; $i++) : ?>
+                    <li role="presentation" class="<?php echo (date('n') == $i) ? "active" : ""; ?>">
+                        <a href="#"
+                           data-month="<?php echo $i ?>"
+                           data-type="major"
+                           aria-controls="<?php echo $month[$i] ?>"
+                           role="tab" data-toggle="tab">
+                            <?php echo $month[$i] ?>
+                        </a>
+                    </li>
+                    <?php endfor; ?>
+                </ul>
+                <!-- Tab panes -->
+                <div class="tab-content tab-content-month" id="major"></div>
+            </div>
+        </div>
+
+        <div role="tabpanel" class="tab-pane" id="counties">
+            <div class="content-tab">
+                <!-- Nav tabs -->
+                <ul class="nav nav-tabs nav-tabs-month nav_month" role="tablist">
+                    <?php for ($i = 1; $i <= 12; $i++) : ?>
+                    <li role="presentation" class="<?php echo (date('n') == $i) ? "active" : ""; ?>">
+                        <a href="#"
+                           data-month="<?php echo $i ?>"
+                           data-type="city"
+                           aria-controls="<?php echo $month[$i] ?>"
+                           role="tab" data-toggle="tab">
+                            <?php echo $month[$i] ?>
+                        </a>
+                    </li>
+                    <?php endfor; ?>
+                </ul>
+                <!-- Tab panes -->
+                <div class="tab-content tab-content-month" id="city"></div>
+            </div>
+        </div>
+
+    </div>
+</div>

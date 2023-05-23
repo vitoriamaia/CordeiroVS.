@@ -1,0 +1,346 @@
+<form action="<?php echo esc_url($_SERVER['REQUEST_URI']); ?>" method="post">
+    <p>
+        A Aerofor traz mais um serviço on-line para agilizar o relacionamento com seus clientes. Preencha o formulário
+        abaixo<br> e envie uma solicitação de cotação de transporte de mercadoria direto para a Aerofor.</p>
+    <p>
+        <strong>Campos com (*) são obrigatórios</strong>
+    </p>
+    <fieldset>
+        <legend>Dados do Solicitante</legend>
+        <div class="row">
+            <div class="col-md-4">
+                <label class="legenda" for="tipopessoa">
+                    <strong>Tipo de Pessoa</strong></label><br>
+                <span class="wpcf7-form-control-wrap TipodePessoa">
+                    <select name="TipodePessoa"
+                            class="wpcf7-form-control wpcf7-select form-control"
+                            id="tipopessoa" aria-invalid="false">
+                        <option value="Física">Física</option>
+                        <option value="Jurídica">Jurídica</option>
+                    </select></span>
+            </div>
+            <div class="col-md-8">
+                <label class="legenda" for="nome">
+                    <strong>Razão Social/Nome *</strong></label><br>
+                <span class="wpcf7-form-control-wrap Nome">
+                    <input type="text" name="Nome" value="" size="40"
+                           class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required form-control"
+                           id="nome" aria-required="true"
+                           aria-invalid="false"></span>
+            </div>
+            <p></p></div>
+        <div class="row">
+            <div class="col-md-6">
+                <label class="legenda" for="cpf">
+                    <strong>CNPJ/CPF *</strong></label><br>
+                <span class="wpcf7-form-control-wrap CPF">
+                    <input type="text" name="CPF" value="" size="40"
+                           class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required form-control"
+                           id="cpf" aria-required="true"
+                           aria-invalid="false"></span>
+            </div>
+            <div class="col-md-6">
+                <label class="legenda" for="nomesolicitante">
+                    <strong>Nome do Solicitante *</strong></label><br>
+                <span class="wpcf7-form-control-wrap NomedoSolicitante">
+                    <input type="text" name="NomedoSolicitante"
+                           value="" size="40"
+                           class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required form-control"
+                           id="nomesolicitante" aria-required="true"
+                           aria-invalid="false"></span>
+            </div>
+            <p></p></div>
+        <div class="row">
+            <div class="col-md-6">
+                <label class="legenda" for="email">
+                    <strong>Email *</strong></label><br>
+                <span class="wpcf7-form-control-wrap Email">
+                    <input type="email" name="Email" value="" size="40"
+                           class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-email form-control"
+                           id="email" aria-required="true" aria-invalid="false"></span>
+            </div>
+            <div class="col-md-6">
+                <label class="legenda" for="telefone">
+                    <strong>Telefone com DDD *</strong></label><br>
+                <span class="wpcf7-form-control-wrap Telefone">
+                    <input type="tel" name="Telefone" value="" size="40"
+                           class="wpcf7-form-control wpcf7-text wpcf7-tel wpcf7-validates-as-required wpcf7-validates-as-tel form-control"
+                           id="telefone" aria-required="true"
+                           aria-invalid="false"></span>
+            </div>
+            <p></p></div>
+        <div class="row">
+            <div class="col-md-6">
+                <label class="legenda" for="cidadeorigem">
+                    <strong>Cidade de Origem *</strong></label><br>
+                <span class="wpcf7-form-control-wrap cidadeorigem">
+                    <input type="text" name="cidadeorigem" value=""
+                           size="40"
+                           class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required form-control"
+                           id="cidadeorigem" aria-required="true"
+                           aria-invalid="false"></span>
+            </div>
+            <div class="col-md-4">
+                <label class="legenda" for="uforigem">
+                    <strong>UF de Origem *</strong></label><br>
+                <span class="wpcf7-form-control-wrap uforigem">
+                    <input type="text" name="uforigem" value="" size="40"
+                           class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required form-control"
+                           id="uforigem" aria-required="true"
+                           aria-invalid="false"></span>
+            </div>
+            <p></p></div>
+        <div class="row">
+            <div class="col-md-6">
+                <label class="legenda" for="cidadedestino">
+                    <strong>Cidade de Destino *</strong></label><br>
+                <span class="wpcf7-form-control-wrap cidadedestino">
+                    <input type="text" name="cidadedestino" value=""
+                           size="40"
+                           class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required form-control"
+                           id="cidadedestino" aria-required="true"
+                           aria-invalid="false"></span>
+            </div>
+            <div class="col-md-4">
+                <label class="legenda" for="ufdestino">
+                    <strong>UF de Destino *</strong></label><br>
+                <span class="wpcf7-form-control-wrap ufdestino">
+                    <input type="text" name="ufdestino" value="" size="40"
+                           class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required form-control"
+                           id="ufdestino" aria-required="true"
+                           aria-invalid="false"></span>
+            </div>
+            <p></p></div>
+        <div class="row">
+            <div class="col-md-2">
+                <label class="legenda" for="frete">
+                    <strong>Frete *</strong>
+                </label><br>
+                <span class="wpcf7-form-control-wrap frete">
+                    <select name="frete"
+                            class="wpcf7-form-control wpcf7-select wpcf7-validates-as-required form-control"
+                            id="frete" aria-required="true"
+                            aria-invalid="false">
+                        <option value="CIF">CIF</option>
+                        <option value="FOB">FOB</option>
+                        <option value="CONSIGNADO">CONSIGNADO</option>
+                    </select></span>
+            </div>
+            <div class="col-md-2">
+                <label class="legenda" for="coleta">
+                    <strong>Coleta *</strong>
+                </label><br>
+                <span class="wpcf7-form-control-wrap coleta">
+                    <select name="coleta"
+                            class="wpcf7-form-control wpcf7-select wpcf7-validates-as-required form-control"
+                            id="coleta" aria-required="true"
+                            aria-invalid="false">
+                        <option value="SIM">SIM</option>
+                        <option value="NÃO">NÃO</option>
+                    </select></span>
+            </div>
+            <div class="col-md-2">
+                <label class="legenda" for="entrega">
+                    <strong>Entrega *</strong></label><br>
+                <span class="wpcf7-form-control-wrap entrega">
+                    <select name="entrega"
+                            class="wpcf7-form-control wpcf7-select wpcf7-validates-as-required form-control"
+                            id="entrega" aria-required="true"
+                            aria-invalid="false">
+                        <option value="SIM">SIM</option>
+                        <option value="NÃO">NÃO</option>
+                    </select>
+                </span>
+            </div>
+            <p></p>
+        </div>
+    </fieldset>
+    <fieldset>
+        <legend>Volumes</legend>
+        <div class="row">
+            <div class="col-md-6">
+                <label class="legenda" for="tipomercadoria">
+                    <strong>Tipo de Mercadoria *</strong></label><br>
+                <span class="wpcf7-form-control-wrap tipomercadoria">
+                    <input type="text" name="tipomercadoria" value=""
+                           size="40"
+                           class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required form-control"
+                           id="tipomercadoria" aria-required="true"
+                           aria-invalid="false"></span>
+            </div>
+            <div class="col-md-6">
+                <label class="legenda" for="tipoembalagem">
+                    <strong>Tipo de Embalagem *</strong></label><br>
+                <span class="wpcf7-form-control-wrap tipoembalagem">
+                    <input type="text" name="tipoembalagem" value=""
+                           size="40"
+                           class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required form-control"
+                           id="tipoembalagem" aria-required="true"
+                           aria-invalid="false"></span>
+            </div>
+            <p></p></div>
+        <div class="row">
+            <div class="col-md-4">
+                <label class="legenda" for="peso">
+                    <strong>Peso (kg) *</strong></label><br>
+                <span class="wpcf7-form-control-wrap peso">
+                    <input type="text" name="peso" value="" size="40"
+                           class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required form-control"
+                           id="peso" aria-required="true"
+                           aria-invalid="false"></span>
+            </div>
+            <div class="col-md-4">
+                <label class="legenda" for="quantidade">
+                    <strong>Quantidade.: *</strong></label><br>
+                <span class="wpcf7-form-control-wrap quantidade">
+                    <input type="text" name="quantidade" value="" size="40"
+                           class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required form-control"
+                           id="quantidade" aria-required="true"
+                           aria-invalid="false"></span>
+            </div>
+            <div class="col-md-4">
+                <label class="legenda" for="valor">
+                    <strong>Valor (R$) NF-e *</strong></label><br>
+                <span class="wpcf7-form-control-wrap valor">
+                    <input type="text" name="valor" value="" size="40"
+                           class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required form-control"
+                           id="valor" aria-required="true" aria-invalid="false"></span>
+            </div>
+            <p></p></div>
+    </fieldset>
+    <fieldset>
+        <legend>Cubagem</legend>
+        <div class="row">
+            <div class="col-md-2">
+                <h5 class="label-cubagem">
+                    <small>Volume</small>
+                </h5>
+                <p><span class="wpcf7-form-control-wrap volume1">
+                        <input type="text" name="volume1" value="" size="40"
+                               class="wpcf7-form-control wpcf7-text form-control"
+                               aria-invalid="false"></span><br>
+                    <span class="wpcf7-form-control-wrap volume2">
+                        <input type="text" name="volume2" value="" size="40"
+                               class="wpcf7-form-control wpcf7-text form-control"
+                               aria-invalid="false"></span><br>
+                    <span class="wpcf7-form-control-wrap volume3">
+                        <input type="text" name="volume3" value="" size="40"
+                               class="wpcf7-form-control wpcf7-text form-control"
+                               aria-invalid="false"></span><br>
+                    <span class="wpcf7-form-control-wrap volume4">
+                        <input type="text" name="volume4" value="" size="40"
+                               class="wpcf7-form-control wpcf7-text form-control"
+                               aria-invalid="false"></span>
+                </p></div>
+            <div class="col-md-2">
+                <h5 class="label-cubagem">
+                    <small>Altura (cm)</small>
+                </h5>
+                <p><span class="wpcf7-form-control-wrap altura1">
+                        <input type="text" name="altura1" value="" size="40"
+                               class="wpcf7-form-control wpcf7-text form-control"
+                               aria-invalid="false"></span><br>
+                    <span class="wpcf7-form-control-wrap altura2">
+                        <input type="text" name="altura2" value="" size="40"
+                               class="wpcf7-form-control wpcf7-text form-control"
+                               aria-invalid="false"></span><br>
+                    <span class="wpcf7-form-control-wrap altura3">
+                        <input type="text" name="altura3" value="" size="40"
+                               class="wpcf7-form-control wpcf7-text form-control"
+                               aria-invalid="false"></span><br>
+                    <span class="wpcf7-form-control-wrap altura4">
+                        <input type="text" name="altura4" value="" size="40"
+                               class="wpcf7-form-control wpcf7-text form-control"
+                               aria-invalid="false"></span>
+                </p></div>
+            <div class="col-md-2">
+                <h5 class="label-cubagem">
+                    <small>Largura (cm)</small>
+                </h5>
+                <p><span class="wpcf7-form-control-wrap largura1">
+                        <input type="text" name="largura1" value="" size="40"
+                               class="wpcf7-form-control wpcf7-text form-control"
+                               aria-invalid="false"></span><br>
+                    <span class="wpcf7-form-control-wrap largura2">
+                        <input type="text" name="largura2" value="" size="40"
+                               class="wpcf7-form-control wpcf7-text form-control"
+                               aria-invalid="false"></span><br>
+                    <span class="wpcf7-form-control-wrap largura3">
+                        <input type="text" name="largura3" value="" size="40"
+                               class="wpcf7-form-control wpcf7-text form-control"
+                               aria-invalid="false"></span><br>
+                    <span class="wpcf7-form-control-wrap largura4">
+                        <input type="text" name="largura4" value="" size="40"
+                               class="wpcf7-form-control wpcf7-text form-control"
+                               aria-invalid="false"></span>
+                </p></div>
+            <div class="col-md-2">
+                <h5 class="label-cubagem">
+                    <small>Comprimento (cm)</small>
+                </h5>
+                <p><span class="wpcf7-form-control-wrap comprimento1">
+                        <input type="text" name="comprimento1" value=""
+                               size="40"
+                               class="wpcf7-form-control wpcf7-text form-control"
+                               aria-invalid="false"></span><br>
+                    <span class="wpcf7-form-control-wrap comprimento2">
+                        <input type="text" name="comprimento2" value=""
+                               size="40"
+                               class="wpcf7-form-control wpcf7-text form-control"
+                               aria-invalid="false"></span><br>
+                    <span class="wpcf7-form-control-wrap comprimento3">
+                        <input type="text" name="comprimento3" value=""
+                               size="40"
+                               class="wpcf7-form-control wpcf7-text form-control"
+                               aria-invalid="false"></span><br>
+                    <span class="wpcf7-form-control-wrap comprimento4">
+                        <input type="text" name="comprimento4" value=""
+                               size="40"
+                               class="wpcf7-form-control wpcf7-text form-control"
+                               aria-invalid="false"></span>
+                </p></div>
+            <div class="col-md-2">
+                <h5 class="label-cubagem">
+                    <small>Peso Cubado</small>
+                </h5>
+                <p><span class="wpcf7-form-control-wrap pesocubado1">
+                        <input type="text" name="pesocubado1" value=""
+                               size="40"
+                               class="wpcf7-form-control wpcf7-text form-control"
+                               aria-invalid="false"></span><br>
+                    <span class="wpcf7-form-control-wrap pesocubado2">
+                        <input type="text" name="pesocubado2" value=""
+                               size="40"
+                               class="wpcf7-form-control wpcf7-text form-control"
+                               aria-invalid="false"></span><br>
+                    <span class="wpcf7-form-control-wrap pesocubado3">
+                        <input type="text" name="pesocubado3" value=""
+                               size="40"
+                               class="wpcf7-form-control wpcf7-text form-control"
+                               aria-invalid="false"></span><br>
+                    <span class="wpcf7-form-control-wrap pesocubado4">
+                        <input type="text" name="pesocubado4" value=""
+                               size="40"
+                               class="wpcf7-form-control wpcf7-text form-control"
+                               aria-invalid="false"></span>
+                </p></div>
+            <p></p></div>
+    </fieldset>
+    <fieldset>
+        <legend>Observações</legend>
+        <div class="row">
+            <div class="col-md-12">
+                <label></label><br>
+                <span class="wpcf7-form-control-wrap observaes">
+                    <textarea name="observaes" cols="40" rows="10"
+                              class="wpcf7-form-control wpcf7-textarea form-control"
+                              aria-invalid="false"></textarea></span>
+            </div>
+            <p></p></div>
+    </fieldset>
+    <div class="row">
+        <div class="col-md-12">
+            <button type="submit" class="btn">Solicitar Cotação</button>
+        </div>
+    </div>
+</form>

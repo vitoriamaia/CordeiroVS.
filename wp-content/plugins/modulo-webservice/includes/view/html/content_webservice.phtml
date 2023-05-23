@@ -1,0 +1,83 @@
+<?php
+
+if (!defined('ABSPATH')) exit; // Exit if accessed directly.
+
+if (have_posts()): while (have_posts()): the_post();
+    $post_request = (isset($_POST['post_request'])) ? true : false; ?>
+
+    <section class="container">
+
+        <?php if ($post_request) : ?>
+
+            <div id="credentials" class="content-page" style="padding: 20px; background: rgba(181, 181, 181, 0.22);">
+                <b>Buscando Cliente</b>
+            </div>
+
+            <div class="row">
+                <aside class="col-md-3 col-sm-3 restrict-aside">
+                    <header>
+                        <h3 class="tit tit__3 tit__3--graytwo">Emissão de Documentos</h3>
+                    </header>
+                    <ul class="restrict-services">
+                        <li class="restrict-services__item">
+                            <a href="#" data-link="boleto" title="2ª via do boleto">
+                                2ª via do boleto
+                            </a>
+                        </li>
+                        <li class="restrict-services__item">
+                            <a href="#" data-link="extrato" title="Extrato de Contrato">
+                                Extrato de Contrato
+                            </a>
+                        </li>
+                    </ul>
+                </aside>
+
+                <article class="col-md-9 col-sm-9 restrict-article">
+                    <ul class="content-tab">
+                        <li class="content-tab__item" id="boleto">
+                            <header>
+                                <h3 class="tit tit__2 tit__3--graytwo"> 2ª via do boleto</h3>
+                            </header>
+                            <p>
+                                <?php the_field('segunda_via_boleto'); ?>
+                            </p>
+                            <div class="gen_boleto_content">
+                                <a href="#" class="gen_boleto btn_gerar_boleto">Gerando Visualização</a>
+                            </div>
+                        </li>
+                        <li class="content-tab__item" id="extrato">
+                            <header>
+                                <h3 class="tit tit__2 tit__3--graytwo"> Extrato de Contrato</h3>
+                            </header>
+                            <p>
+                                <?php the_field('extrato_de_contrato'); ?>
+                            </p>
+                            <div class="gen_extrato_content">
+                                <a href="#" class="gen_extrato btn_gerar_boleto" target="_blank">Gerando Visualização</a>
+                            </div>
+                        </li>
+                    </ul>
+                </article>
+            </div>
+
+        <?php else : ?>
+
+            <div class="row">
+                <article class="col-md-12 col-sm-12 restrict-article">
+                    <ul class="content-tab">
+                        <li class="content-tab__item" id="init">
+                            <header>
+                                <h3 class="tit tit__2 tit__3--graytwo"><?php the_title(); ?></h3>
+                            </header>
+
+                            <?php the_content() ?>
+                        </li>
+                    </ul>
+                </article>
+            </div>
+
+        <?php endif; ?>
+
+    </section>
+
+<?php endwhile; endif; ?>

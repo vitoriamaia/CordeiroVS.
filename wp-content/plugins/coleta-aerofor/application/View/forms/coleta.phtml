@@ -1,0 +1,675 @@
+<form action="<?php echo esc_url($_SERVER['REQUEST_URI']); ?>" method="post">
+    <p>
+        Para solicitar a coleta de sua carga via internet, preencha o formulário abaixo, informando seus contatos, as
+        características<br/> da carga e os locais de coleta e entrega. Após envio da solicitação, você receberá sua
+        confirmação por e-mail, <br/>com as informações sobre a coleta de sua carga.
+    </p>
+    <p>
+        <strong>Campos com (*) são obrigatórios</strong>
+    </p>
+
+    <!-- Dados do Solicitante -->
+    <fieldset>
+
+        <legend>Dados do Solicitante</legend>
+
+        <div class="row">
+
+            <div class="col-md-6">
+                <label class="legenda" for="cpf_cnpj_solicitante">
+                    <strong>CNPJ/CPF *</strong>
+                </label>
+                <br/>
+                <span class="wpcf7-form-control-wrap">
+                    <input type="text" name="cpf_cnpj_solicitante" size="40" class="form-control" id="cpf_cnpj_solicitante">
+                </span>
+            </div>
+
+            <div class="col-md-6">
+                <label class="legenda" for="inscri_est_mun_solicitante">
+                    <strong>INSC.EST/MUN *</strong>
+                </label>
+                <br/>
+                <span class="wpcf7-form-control-wrap">
+                    <input type="text" name="inscri_est_mun_solicitante" size="40" class="form-control"
+                           id="inscri_est_mun_solicitante">
+                </span>
+            </div>
+
+        </div>
+
+        <div class="row">
+
+            <div class="col-md-6">
+                <label class="legenda" for="nome_solicitante">
+                    <strong>Raz&atilde;o Social *</strong>
+                </label>
+                <br/>
+                <span class="wpcf7-form-control-wrap">
+                    <input type="text" name="nome_solicitante" size="40" class="form-control" id="nome_solicitante">
+                </span>
+            </div>
+
+            <div class="col-md-3">
+                <label class="legenda" for="telefone_solicitante">
+                    <strong>Telefone do local da coleta *</strong>
+                </label>
+                <br/>
+                <span class="wpcf7-form-control-wrap">
+                    <input type="text" name="telefone_solicitante" size="40" class="form-control"
+                           id="telefone_solicitante">
+                </span>
+            </div>
+
+            <div class="col-md-3">
+                <label class="legenda" for="cep_solicitante">
+                    <strong>CEP *</strong>
+                </label>
+                <br/>
+                <span class="wpcf7-form-control-wrap">
+                    <input type="text" name="cep_solicitante" size="40" class="form-control" id="cep_solicitante">
+                </span>
+            </div>
+
+        </div>
+
+        <div class="row">
+
+
+            <div class="col-md-9">
+                <label class="legenda" for="endereco_solicitante">
+                    <strong>Endereço da Coleta *</strong>
+                </label>
+                <br/>
+                <span class="wpcf7-form-control-wrap">
+                    <input type="text" name="endereco_solicitante" size="40" class="form-control"
+                           id="endereco_solicitante">
+                </span>
+            </div>
+
+            <div class="col-md-3">
+                <label class="legenda" for="numero_solicitante">
+                    <strong>Nº *</strong>
+                </label>
+                <br/>
+                <span class="wpcf7-form-control-wrap">
+                    <input type="text" name="numero_solicitante" size="40" class="form-control" id="numero_solicitante">
+                </span>
+            </div>
+
+        </div>
+
+        <div class="row">
+
+            <div class="col-md-6">
+                <label class="legenda" for="bairro_solicitante">
+                    <strong>Bairro *</strong>
+                </label>
+                <br/>
+                <span class="wpcf7-form-control-wrap">
+                    <input type="text" name="bairro_solicitante" size="40" class="form-control" id="bairro_solicitante">
+                </span>
+            </div>
+
+            <div class="col-md-6">
+                <label class="legenda" for="cidade_solicitante">
+                    <strong>Cidade *</strong>
+                </label>
+                <br/>
+                <span class="wpcf7-form-control-wrap">
+                    <input type="text" name="cidade_solicitante" size="40" class="form-control" id="cidade_solicitante">
+                </span>
+            </div>
+
+        </div>
+
+        <div class="row">
+
+            <div class="col-md-6">
+                <label class="legenda" for="uf_solicitante">
+                    <strong>UF *</strong>
+                </label>
+                <br/>
+                <span class="wpcf7-form-control-wrap">
+                    <select name="uf_solicitante" class="form-control" id="uf_solicitante">
+                        <option value="Acre">Acre</option>
+                        <option value="Alagoas">Alagoas</option>
+                        <option value="Amapá">Amapá</option>
+                        <option value="Amazonas">Amazonas</option>
+                        <option value="Bahia">Bahia</option>
+                        <option value="Ceará">Ceará</option>
+                        <option value="Distrito Federal">Distrito Federal</option>
+                        <option value="Espírito Santo">Espírito Santo</option>
+                        <option value="Goiás">Goiás</option>
+                        <option value="Maranhão">Maranhão</option>
+                        <option value="Mato Grosso">Mato Grosso</option>
+                        <option value="Mato Grosso do Sul">Mato Grosso do Sul</option>
+                        <option value="Minas Gerais">Minas Gerais</option>
+                        <option value="Pará">Pará</option>
+                        <option value="Paraíba">Paraíba</option>
+                        <option value="Paraná">Paraná</option>
+                        <option value="Pernambuco">Pernambuco</option>
+                        <option value="Piauí">Piauí</option>
+                        <option value="Rio de Janeiro">Rio de Janeiro</option>
+                        <option value="Rio Grande do Norte">Rio Grande do Norte</option>
+                        <option value="Rio Grande do Sul">Rio Grande do Sul</option>
+                        <option value="Rondônia">Rondônia</option>
+                        <option value="Roraima">Roraima</option>
+                        <option value="Santa Catarina">Santa Catarina</option>
+                        <option value="São Paulo">São Paulo</option>
+                        <option value="Sergipe">Sergipe</option>
+                        <option value="Tocantins">Tocantins</option>
+                    </select>
+                </span>
+            </div>
+
+        </div>
+
+    </fieldset>
+
+    <!-- Destinatário -->
+    <fieldset>
+
+        <legend>Destinatário</legend>
+
+        <div class="row">
+
+            <div class="col-md-6">
+                <label class="legenda" for="cpf_cnpj_destinatario">
+                    <strong>CNPJ/CPF *</strong>
+                </label>
+                <br/>
+                <span class="wpcf7-form-control-wrap">
+                    <input type="text" name="cpf_cnpj_destinatario" size="40" class="form-control" id="cpf_cnpj_destinatario">
+                </span>
+            </div>
+
+            <div class="col-md-6">
+                <label class="legenda" for="inscri_est_mun_destinatario">
+                    <strong>INSC.EST/MUN *</strong>
+                </label>
+                <br/>
+                <span class="wpcf7-form-control-wrap">
+                    <input type="text" name="inscri_est_mun_destinatario" size="40" class="form-control"
+                           id="inscri_est_mun_destinatario">
+                </span>
+            </div>
+
+        </div>
+
+        <div class="row">
+
+            <div class="col-md-6">
+                <label class="legenda" for="nome_destinatario">
+                    <strong>Raz&atilde;o Social *</strong>
+                </label>
+                <br/>
+                <span class="wpcf7-form-control-wrap">
+                    <input type="text" name="nome_destinatario" size="40" class="form-control" id="nome_destinatario">
+                </span>
+            </div>
+
+            <div class="col-md-3">
+                <label class="legenda" for="telefone_destinatario">
+                    <strong>Telefone do local da coleta *</strong>
+                </label>
+                <br/>
+                <span class="wpcf7-form-control-wrap">
+                    <input type="text" name="telefone_destinatario" size="40" class="form-control"
+                           id="telefone_destinatario">
+                </span>
+            </div>
+
+            <div class="col-md-3">
+                <label class="legenda" for="cep_destinatario">
+                    <strong>CEP *</strong>
+                </label>
+                <br/>
+                <span class="wpcf7-form-control-wrap">
+                    <input type="text" name="cep_destinatario" size="40" class="form-control" id="cep_destinatario">
+                </span>
+            </div>
+
+        </div>
+
+        <div class="row">
+
+
+            <div class="col-md-9">
+                <label class="legenda" for="endereco_destinatario">
+                    <strong>Endereço da Coleta *</strong>
+                </label>
+                <br/>
+                <span class="wpcf7-form-control-wrap">
+                    <input type="text" name="endereco_destinatario" size="40" class="form-control"
+                           id="endereco_destinatario">
+                </span>
+            </div>
+
+            <div class="col-md-3">
+                <label class="legenda" for="numero_destinatario">
+                    <strong>Nº *</strong>
+                </label>
+                <br/>
+                <span class="wpcf7-form-control-wrap">
+                    <input type="text" name="numero_destinatario" size="40" class="form-control" id="numero_destinatario">
+                </span>
+            </div>
+
+        </div>
+
+        <div class="row">
+
+            <div class="col-md-6">
+                <label class="legenda" for="bairro_destinatario">
+                    <strong>Bairro *</strong>
+                </label>
+                <br/>
+                <span class="wpcf7-form-control-wrap">
+                    <input type="text" name="bairro_destinatario" size="40" class="form-control" id="bairro_destinatario">
+                </span>
+            </div>
+
+            <div class="col-md-6">
+                <label class="legenda" for="cidade_destinatario">
+                    <strong>Cidade *</strong>
+                </label>
+                <br/>
+                <span class="wpcf7-form-control-wrap">
+                    <input type="text" name="cidade_destinatario" size="40" class="form-control" id="cidade_destinatario">
+                </span>
+            </div>
+
+        </div>
+
+        <div class="row">
+
+            <div class="col-md-6">
+                <label class="legenda" for="uf_destinatario">
+                    <strong>UF *</strong>
+                </label>
+                <br/>
+                <span class="wpcf7-form-control-wrap">
+                    <select name="uf_destinatario" class="form-control" id="uf_destinatario">
+                        <option value="Acre">Acre</option>
+                        <option value="Alagoas">Alagoas</option>
+                        <option value="Amapá">Amapá</option>
+                        <option value="Amazonas">Amazonas</option>
+                        <option value="Bahia">Bahia</option>
+                        <option value="Ceará">Ceará</option>
+                        <option value="Distrito Federal">Distrito Federal</option>
+                        <option value="Espírito Santo">Espírito Santo</option>
+                        <option value="Goiás">Goiás</option>
+                        <option value="Maranhão">Maranhão</option>
+                        <option value="Mato Grosso">Mato Grosso</option>
+                        <option value="Mato Grosso do Sul">Mato Grosso do Sul</option>
+                        <option value="Minas Gerais">Minas Gerais</option>
+                        <option value="Pará">Pará</option>
+                        <option value="Paraíba">Paraíba</option>
+                        <option value="Paraná">Paraná</option>
+                        <option value="Pernambuco">Pernambuco</option>
+                        <option value="Piauí">Piauí</option>
+                        <option value="Rio de Janeiro">Rio de Janeiro</option>
+                        <option value="Rio Grande do Norte">Rio Grande do Norte</option>
+                        <option value="Rio Grande do Sul">Rio Grande do Sul</option>
+                        <option value="Rondônia">Rondônia</option>
+                        <option value="Roraima">Roraima</option>
+                        <option value="Santa Catarina">Santa Catarina</option>
+                        <option value="São Paulo">São Paulo</option>
+                        <option value="Sergipe">Sergipe</option>
+                        <option value="Tocantins">Tocantins</option>
+                    </select>
+                </span>
+            </div>
+
+        </div>
+
+    </fieldset>
+
+    <!-- Dados da coleta -->
+    <fieldset>
+        <legend>Cubagem</legend>
+
+        <div class="row">
+            <div class="col-md-1">
+                <h5 class="label-cubagem">
+                    <small>Volume</small>
+                </h5>
+            </div>
+
+            <div class="col-md-1">
+                <h5 class="label-cubagem">
+                    <small>Peso<br/>Real (KG)</small>
+                </h5>
+            </div>
+
+            <div class="col-md-1">
+                <h5 class="label-cubagem">
+                    <small>Peso<br/>Cubado (KG)</small>
+                </h5>
+            </div>
+
+            <div class="col-md-5">
+                <h5 class="label-cubagem">
+                    <small>Conteúdo declarado</small>
+                </h5>
+            </div>
+
+            <div class="col-md-2">
+                <h5 class="label-cubagem">
+                    <small>Nota Fiscal <br> série</small>
+                </h5>
+            </div>
+
+            <div class="col-md-2">
+                <h5 class="label-cubagem">
+                    <small>Valor da Nota</small>
+                </h5>
+            </div>
+        </div>
+
+        <?php for($i=1;$i<=10;$i++): ?>
+        <div class="row" style="margin-bottom: 10px">
+            <div class="col-md-1">
+                <span class="wpcf7-form-control-wrap">
+                    <input type="text" name="volume[]" value="" size="40" class="form-control">
+                </span>
+            </div>
+
+            <div class="col-md-1">
+                <span class="wpcf7-form-control-wrap">
+                    <input type="text" name="peso_real[]" value="" size="40" class="form-control">
+                </span>
+            </div>
+
+            <div class="col-md-1">
+                <span class="wpcf7-form-control-wrap">
+                    <input type="text" name="peso_cubado[]" value="" size="40" class="form-control">
+                </span>
+            </div>
+
+            <div class="col-md-5">
+                <span class="wpcf7-form-control-wrap">
+                    <input type="text" name="conteudo[]" value="" size="40" class="form-control">
+                </span>
+            </div>
+
+            <div class="col-md-2">
+                <span class="wpcf7-form-control-wrap">
+                    <input type="text" name="nota_fiscal[]" value="" size="40" class="form-control">
+                </span>
+            </div>
+
+            <div class="col-md-2">
+                <span class="wpcf7-form-control-wrap volume1">
+                    <input type="text" name="valor_nota[]" value="" size="40" class="form-control">
+                </span>
+            </div>
+        </div>
+        <?php endfor; ?>
+
+    </fieldset>
+
+    <!-- Dados do solicitado -->
+    <fieldset>
+
+        <div class="row">
+
+            <div class="col-md-4">
+                <label class="legenda" for="solicitada_por">
+                    <strong>Solicitada por *</strong>
+                </label>
+                <br/>
+                <span class="wpcf7-form-control-wrap">
+                    <input type="text" name="solicitada_por" size="40" class="form-control" id="solicitada_por">
+                </span>
+            </div>
+
+            <div class="col-md-2">
+                <label class="legenda" for="data_solicitada">
+                    <strong>Data Solicitada *</strong>
+                </label>
+                <br/>
+                <span class="wpcf7-form-control-wrap">
+                    <input type="text" name="data_solicitada" size="40" class="form-control" id="data_solicitada">
+                </span>
+            </div>
+
+            <div class="col-md-2">
+                <label class="legenda" for="hora_solicitada">
+                    <strong>Hora Solicitada *</strong>
+                </label>
+                <br/>
+                <span class="wpcf7-form-control-wrap">
+                    <input type="text" name="hora_solicitada" size="40" class="form-control" id="hora_solicitada">
+                </span>
+            </div>
+
+            <div class="col-md-2">
+                <label class="legenda" for="tipo_programacao_solicitada">
+                    <strong>Progr. / Hora</strong>
+                </label>
+
+                <br/>
+
+                <span class="wpcf7-form-control-wrap" style="display: block; margin-bottom: 10px">
+                    <select name="tipo_programacao_solicitada" class="form-control" id="tipo_programacao_solicitada">
+                        <option value="Até as" selected="selected">Até as</option>
+                        <option value="Antes das">Antes das</option>
+                        <option value="Somente as">Somente as</option>
+                        <option value="Após as">Após as</option>
+                    </select>
+                </span>
+
+                <span class="wpcf7-form-control-wrap">
+                    <select name="hora_programacao_solicitada" class="form-control" id="hora_programacao_solicitada">
+                        <option selected="">00:00</option>
+                        <option>00:10</option>
+                        <option>00:20</option>
+                        <option>00:30</option>
+                        <option>00:40</option>
+                        <option>00:50</option>
+                        <option>     </option>
+                        <option>01:00</option>
+                        <option>01:10</option>
+                        <option>01:20</option>
+                        <option>01:30</option>
+                        <option>01:40</option>
+                        <option>01:50</option>
+                        <option>     </option>
+                        <option>02:00</option>
+                        <option>02:10</option>
+                        <option>02:20</option>
+                        <option>02:30</option>
+                        <option>02:40</option>
+                        <option>02:50</option>
+                        <option>     </option>
+                        <option>03:00</option>
+                        <option>03:10</option>
+                        <option>03:20</option>
+                        <option>03:30</option>
+                        <option>03:40</option>
+                        <option>03:50</option>
+                        <option>     </option>
+                        <option>04:00</option>
+                        <option>04:10</option>
+                        <option>04:20</option>
+                        <option>04:30</option>
+                        <option>04:40</option>
+                        <option>04:50</option>
+                        <option>     </option>
+                        <option>05:00</option>
+                        <option>05:10</option>
+                        <option>05:20</option>
+                        <option>05:30</option>
+                        <option>05:40</option>
+                        <option>05:50</option>
+                        <option>     </option>
+                        <option>06:00</option>
+                        <option>06:10</option>
+                        <option>06:20</option>
+                        <option>06:30</option>
+                        <option>06:40</option>
+                        <option>06:50</option>
+                        <option>     </option>
+                        <option>07:00</option>
+                        <option>07:10</option>
+                        <option>07:20</option>
+                        <option>07:30</option>
+                        <option>07:40</option>
+                        <option>07:50</option>
+                        <option>     </option>
+                        <option>08:00</option>
+                        <option>08:10</option>
+                        <option>08:20</option>
+                        <option>08:30</option>
+                        <option>08:40</option>
+                        <option>08:50</option>
+                        <option>     </option>
+                        <option>09:00</option>
+                        <option>09:10</option>
+                        <option>09:20</option>
+                        <option>09:30</option>
+                        <option>09:40</option>
+                        <option>09:50</option>
+                        <option>     </option>
+                        <option>10:00</option>
+                        <option>10:10</option>
+                        <option>10:20</option>
+                        <option>10:30</option>
+                        <option>10:40</option>
+                        <option>10:50</option>
+                        <option>     </option>
+                        <option>11:00</option>
+                        <option>11:10</option>
+                        <option>11:20</option>
+                        <option>11:30</option>
+                        <option>11:40</option>
+                        <option>11:50</option>
+                        <option>     </option>
+                        <option>12:00</option>
+                        <option>12:10</option>
+                        <option>12:20</option>
+                        <option>12:30</option>
+                        <option>12:40</option>
+                        <option>12:50</option>
+                        <option>     </option>
+                        <option>13:00</option>
+                        <option>13:10</option>
+                        <option>13:20</option>
+                        <option>13:30</option>
+                        <option>13:40</option>
+                        <option>13:50</option>
+                        <option>     </option>
+                        <option>14:00</option>
+                        <option>14:10</option>
+                        <option>14:20</option>
+                        <option>14:30</option>
+                        <option>14:40</option>
+                        <option>14:50</option>
+                        <option>     </option>
+                        <option>15:00</option>
+                        <option>15:10</option>
+                        <option>15:20</option>
+                        <option>15:30</option>
+                        <option>15:40</option>
+                        <option>15:50</option>
+                        <option>     </option>
+                        <option>16:00</option>
+                        <option>16:10</option>
+                        <option>16:20</option>
+                        <option>16:30</option>
+                        <option>16:40</option>
+                        <option>16:50</option>
+                        <option>     </option>
+                        <option>17:00</option>
+                        <option>17:10</option>
+                        <option>17:20</option>
+                        <option>17:30</option>
+                        <option>17:40</option>
+                        <option>17:50</option>
+                        <option>     </option>
+                        <option>18:00</option>
+                        <option>18:10</option>
+                        <option>18:20</option>
+                        <option>18:30</option>
+                        <option>18:40</option>
+                        <option>18:50</option>
+                        <option>     </option>
+                        <option>19:00</option>
+                        <option>19:10</option>
+                        <option>19:20</option>
+                        <option>19:30</option>
+                        <option>19:40</option>
+                        <option>19:50</option>
+                        <option>     </option>
+                        <option>20:00</option>
+                        <option>20:10</option>
+                        <option>20:20</option>
+                        <option>20:30</option>
+                        <option>20:40</option>
+                        <option>20:50</option>
+                        <option>     </option>
+                        <option>21:00</option>
+                        <option>21:10</option>
+                        <option>21:20</option>
+                        <option>21:30</option>
+                        <option>21:40</option>
+                        <option>21:50</option>
+                        <option>     </option>
+                        <option>22:00</option>
+                        <option>22:10</option>
+                        <option>22:20</option>
+                        <option>22:30</option>
+                        <option>22:40</option>
+                        <option>22:50</option>
+                        <option>     </option>
+                        <option>23:00</option>
+                        <option>23:10</option>
+                        <option>23:20</option>
+                        <option>23:30</option>
+                        <option>23:40</option>
+                        <option>23:50</option>
+                        <option>     </option>
+                    </select>
+                </span>
+            </div>
+
+            <div class="col-md-2">
+                <label class="legenda" for="tipo_programacao_solicitada">
+                    <strong>Modalidade</strong>
+                </label>
+
+                <br/>
+
+                <span class="wpcf7-form-control-wrap">
+                    <select name="tipo_programacao_solicitada" class="form-control" id="tipo_programacao_solicitada">
+                        <option value="1" selected="selected">Origem</option>
+                        <option value="2">Destino</option>
+                    </select>
+                </span>
+            </div>
+
+        </div>
+
+    </fieldset>
+
+    <!-- Observações -->
+    <fieldset>
+        <legend>Observações</legend>
+        <div class="row">
+            <div class="col-md-12">
+                <span class="wpcf7-form-control-wrap observaes">
+                    <textarea name="observacoes" cols="40" rows="10" class="form-control"></textarea>
+                </span>
+            </div>
+        </div>
+    </fieldset>
+
+    <div class="row">
+        <div class="col-md-12">
+            <button type="submit" class="btn">Solicitar Coleta</button>
+        </div>
+    </div>
+    <input type="hidden" name="collect" />
+</form>

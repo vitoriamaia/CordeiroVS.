@@ -1,0 +1,45 @@
+.clr{
+    width: 100%;
+    height: 1px;
+    clear: both;
+}
+
+.item-product-wrap{
+    height: 330px;
+    overflow-x: auto;
+}
+
+.item-product-wrap-group{
+    border-bottom: 1px dotted black;
+    margin-bottom: 15px;
+    padding-bottom: 5px;
+}
+
+.item_product{
+    width: 20%;
+    margin-bottom: 10px;
+    float: left;
+}
+
+.item_product .title_product{
+    width: 155px;
+    margin-bottom: 5px;
+}
+
+
+@media (max-width: 800px){
+
+    .item_product{
+        width: 30%;
+    }
+
+}
+
+
+@media (max-width: 660px){
+
+    .item_product{
+        width: 50%;
+    }
+
+}

@@ -1,0 +1,128 @@
+<?php
+
+if (!defined('ABSPATH')) {
+    exit; // Exit if accessed directly
+}
+
+$regions = apply_filters('select_table', 'regions');
+$unities = apply_filters('select_table', 'unities');
+
+?>
+
+    <a href="#" class="register_unity button button-primary button-large">Cadastrar Unidade</a>
+
+    <form action="<?php echo admin_url('admin-ajax.php?action=save_unities'); ?>" class="register_form" method="post" accept-charset="utf-8" style="display: none;">
+        <p>
+            <label for="unidade">
+                <strong>Unidade</strong>
+            </label> <br/>
+            <input type="text" name="unidade" id="unidade" value="" required="required"/>
+        </p>
+
+        <p>
+            <label for="endereco">
+                <strong>Endereço</strong>
+            </label> <br/>
+            <input type="text" name="endereco" id="endereco" value="" required="required"/>
+        </p>
+
+        <p>
+            <label for="estado">
+                <strong>Estado</strong>
+            </label> <br/>
+            <select name="estado" id="estado" value="Ceará"></select>
+        </p>
+
+        <p>
+            <label for="cidade">
+                <strong>Cidade</strong>
+            </label> <br/>
+            <select name="cidade" id="cidade" value="Fortaleza"></select>
+        </p>
+
+        <script language="JavaScript" type="text/javascript" charset="utf-8">
+            new dgCidadesEstados({
+                cidade: document.getElementById('cidade'),
+                estado: document.getElementById('estado')
+            })
+        </script>
+
+        <p>
+            <label for="regiao">
+                <strong>Região</strong>
+            </label> <br/>
+            <select name="regiao" id="regiao">
+
+                <?php
+                if ($regions) : foreach ($regions as $region) : ?>
+
+                    <option value="<?php echo $region->id ?>"><?php echo $region->regioes ?></option>
+
+                <?php endforeach; ?>
+
+                <?php else : ?>
+
+                    <option value="">Nenhuma região cadastrada</option>
+
+                <?php endif; ?>
+
+            </select>
+        </p>
+        <p>
+            <input type="submit" id="incluir_reg" class="button" value="Cadastrar Nova Unidade"/>
+        </p>
+    </form>
+
+<?php if ($unities) : ?>
+
+    <h2 id="titulo-despesa">Unidades Cadastradas</h2>
+
+    <table class="data">
+
+        <thead>
+            <tr>
+                <td class="top-table"><strong>Unidade</strong></td>
+                <td class="top-table"><strong>Endereço</strong></td>
+                <td class="top-table"><strong>Cidade</strong></td>
+                <td class="top-table"><strong>Estado</strong></td>
+                <td class="top-table"><strong>Região</strong></td>
+                <td class="top-table"><strong>Ação</strong></td>
+            </tr>
+        </thead>
+
+        <tbody>
+
+            <?php
+            foreach ($unities as $unity) :
+            $region = apply_filters('select_table_id', 'regions', $unity->regiao); ?>
+
+            <tr>
+
+                <?php
+
+                echo "<td> $unity->unidade </td>";
+                echo "<td> $unity->endereco </td>";
+                echo "<td> $unity->cidade </td>";
+                echo "<td> $unity->estado </td>";
+                echo "<td>" . $region[0]->regioes . "</td>";
+
+                ?>
+
+                <td class='no-print'>
+                    <a href="?page=unities&tab=edit_unity&id=<?php echo $unity->id; ?>" class="button edit-viagem">editar</a>
+                    <a href="<?php echo admin_url("admin-ajax.php?action=delete_reg&table=unities&id=$unity->id") ?>" class="button delete" onclick="return confirm('Deseja realmente Excluir este registro?')">delete</a>
+                </td>
+
+            </tr>
+
+            <?php endforeach; ?>
+
+        </tbody>
+
+    </table>
+
+<?php else : ?>
+
+    <p class="no-found">Nenhum Registrado Encontrado.</p>
+
+<?php endif; ?>

@@ -1,0 +1,34 @@
+/*
+|----------------------------------------------
+| Components
+|----------------------------------------------
+*/
+
+// imagem interna personalizada
+.capa-interna {
+  position: relative;
+  margin-bottom: 40px;
+  &__item {
+    @include size(100%, 100%);
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    padding: 0;
+    opacity: 4;
+  }
+  &__vertical {
+    width: 100%;
+    height: 100%;
+    display: table;
+  }
+  &__middle {
+    vertical-align: middle;
+    display: table-cell;
+    text-align: center;
+  }
+}
+
+.img-page-custon {
+  width: 100%;
+}

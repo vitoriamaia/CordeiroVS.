@@ -1,0 +1,103 @@
+<?php
+
+$controller = MPThrough();
+$prefectures = $controller->get_town_hall();
+
+$month = $controller->get_months();
+$data_attributes = $controller->get_data_attributes();
+
+$prefecture_post = $data_attributes['prefecture'];
+$month_post = $data_attributes['month'];
+$year_post = $data_attributes['year'];
+$type_post = $data_attributes['type'];
+
+?>
+
+<script type="text/javascript">
+
+    jQuery(document).ready(function ($) {
+        if ($('#prefecture').val() == "") {
+            $('#month option').eq(0).before("<option value=''>Todos</option>");
+            $('#year option').eq(0).before("<option value=''>Todos</option>");
+
+            $('#month option').eq(0).attr('style', 'display:none');
+            $('#year option').eq(0).attr('style', 'display:none');
+
+            $('#month option').eq(1).attr('selected', 'selected');
+            $('#year option').eq(1).attr('selected', 'selected');
+        } else {
+            $('#month option').eq(0).attr('style', 'display:inline-block');
+            $('#year option').eq(0).attr('style', 'display:inline-block');
+        }
+
+        $('#prefeitura_id').change(function () {
+            if ($('#prefeitura_id').val() == "") {
+                $('#month option').eq(0).attr('style', 'display:none');
+                $('#year option').eq(0).attr('style', 'display:none');
+
+                $('#month option').eq(1).attr('selected', 'selected');
+                $('#year option').eq(1).attr('selected', 'selected');
+            } else {
+                $('#month option').eq(0).attr('style', 'display:inline-block');
+                $('#month option').eq(0).attr('selected', 'selected');
+
+                $('#year option').eq(0).attr('style', 'display:inline-block');
+                $('#year option').eq(0).attr('selected', 'selected');
+            }
+        });
+
+    })
+
+</script>
+
+<div class="area-form-finances">
+    <h2 class="title-block title-block--green">Finanças Públicas</h2>
+    <form action="<?php echo get_permalink(get_page_by_path('financas-publicas')); ?>" method="post" id="financas" class="form-finances">
+        <div class="row">
+            <div class="col-md-12">
+                <select name="prefecture" id="prefecture" class="prefecture">
+                    <option value="">Prefeitura</option>
+                    <?php
+                    foreach ($prefectures as $prefecture) {
+                        $cp = $prefecture->codigo_prefeitura;
+                        echo "<option value='" . $cp . "' " . ($cp == $prefecture_post ? 'selected=selected' : '') . ">" . $prefecture->nome . "</option>";
+                    }
+                    ?>
+                </select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 col-sm-6">
+                <select name="month_pass" id="month" class="month">
+                    <?php
+                    foreach ($month as $key => $desc)
+                        echo "<option value='{$key}' " . ($key == $month_post ? 'selected=selected' : '') . ">{$desc}</option>";
+                    ?>
+                </select>
+            </div>
+            <div class="col-md-6 col-sm-6">
+                <select name="year_pass" id="year" class="year">
+                    <?php for ($i = date("Y"); $i >= 1996; $i--) : ?>
+                        <option value="<?php echo $i; ?>" <?php echo $i == $year_post ? "selected=selected" : ''; ?>>
+                            <?php echo $i; ?>
+                        </option>
+                    <?php endfor; ?>
+                </select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <select name="type_pass" id="passthrough" class="passthrough">
+                    <option value="1" <?php echo 1 == $type_post ? "selected=selected" : ''; ?>>ICMS</option>
+                    <option value="2" <?php echo 2 == $type_post ? "selected=selected" : ''; ?>>FPM</option>
+                </select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <button id="btFinancas" class="btn-custom btn-custom--green pull-right" type="submit">Acessar</button>
+                <input type="hidden" name="pass_through">
+            </div>
+        </div>
+    </form>
+</div>

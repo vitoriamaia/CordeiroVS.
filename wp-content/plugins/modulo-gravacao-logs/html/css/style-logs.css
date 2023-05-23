@@ -1,0 +1,48 @@
+#titulo-fatura{width: 600px; text-align: center;}
+
+.form_save{}
+	.form_save .msg_erro{border: 1px solid #ff0000;}
+
+a.cadastrar{width: 265px; margin: 10px 0; padding: 5px 0; font-size: 14px; text-align: center; background: #007700; cursor: pointer; border-radius: 5px; display: block; color: #fff; text-decoration: none;}
+a.cadastrar:hover{color: #ddd;}
+
+.fatura{width: 600px; clear: both;}
+	.fatura .titulo-fatura{padding: 10px; font-size: 16px; text-align: center; background: #bfbfbf; margin: 10px 0; cursor: pointer; border-radius: 5px;}
+	.fatura .body_fatura{display: none; margin-bottom: 50px;}
+		.fatura .descr-fatura{text-align: center;}
+		.fatura .item-descr{width: 50%; float: left; font-size: 15px; font-weight: bold;}
+		.fatura .group-descr{height: 32px; line-height: 32px; clear: both;}
+			.fatura .linha-preta{background: #d5d5d5}
+			.fatura .linha-branca{background: #ddd}
+		.fatura .result-descr{width: 50%; float: left; text-align: center;}
+		.fatura .total{font-size: 13px; font-weight: bold;}
+		.fatura .delete{font-size: 11px; text-decoration: none; text-transform: uppercase; color: #bb0000;}
+
+.form-cadastro{width: 560px; padding: 20px; background: white; display: none;}
+
+.invoice_wrap .datas{width: 175px; padding-left: 10px;}
+.invoice_wrap #push{width: 80px; cursor: pointer;}
+
+#ui-datepicker-div{border: 1px solid #eee; background: white; padding: 10px; display: none;}
+.ui-datepicker-header .ui-datepicker-prev{font-weight: bold; font-size: 15px; color: #00a; cursor: pointer; margin-left: 10px; float: left;}
+.ui-datepicker-header .ui-datepicker-next{font-weight: bold; font-size: 15px; color: #00a; cursor: pointer; margin-right: 10px; float: right;}
+.ui-datepicker-header .ui-datepicker-title{padding: 5px 0 30px 0; clear: both;}
+.ui-datepicker-header .ui-datepicker-month{width: 115px; height: 25px; float: left;}
+.ui-datepicker-header .ui-datepicker-year{width: 115px; height: 25px; float: right;}
+.ui-datepicker-calendar th{padding: 3px;}
+.ui-datepicker-calendar td{padding: 7px; text-align: center; border: 1px solid #eee;}
+.ui-datepicker-calendar td a{text-decoration: none; color: #20243d;}
+
+
+/* Estilos Filtro */
+table.dataTable thead .sorting_asc{background: url("../img/sort_asc.png") no-repeat center right;}
+table.dataTable thead .sorting_desc{background: url("../img/sort_desc.png") no-repeat center right;}
+table.dataTable thead .sorting{background: url("../img/sort_both.png") no-repeat center right;}
+
+/* Tabela Billing */
+#DataTables_Table_0_wrapper{margin-top: 35px;}
+.billing-table{width: 910px;}
+	.billing-table td{padding-left: 10px;}
+	.billing-table .top-billing-table{border-top: 3px double; border-bottom: 1px solid; padding: 5px;}
+	.billing-table .odd{background: #d5d5d5}
+	.billing-table .even{background: #ddd}

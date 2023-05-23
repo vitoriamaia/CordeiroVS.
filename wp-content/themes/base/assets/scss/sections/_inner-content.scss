@@ -1,0 +1,414 @@
+/*
+|----------------------------------------------
+| Inner Content
+|----------------------------------------------
+*/
+
+
+/**
+ * Style Custom for CK Editor
+ */
+.content-page{
+ // @include confText($hind, 300, 15px, $cl-gray-1, none, left);
+  p{
+    //@include confText($hind, 300, 15px, $cl-gray-1, none, left);
+  }
+  ul{
+    margin:20px;
+    padding-left:20px;
+    li{
+      list-style: disc;
+      margin: 15px 0px;
+      //@include confText($hind, 300, 15px, $cl-gray-1, none, left);
+    }
+  }
+  ol{
+    margin:20px;
+    padding-left:20px;
+    li{
+      list-style: decimal ;
+      //@include confText($hind, 300, 15px, $cl-gray-1, none, left);
+      margin: 15px 0px;
+    }
+  }
+  strong{
+    font-weight: bold;
+  }
+
+  .thumbpage{
+    img{
+      width: 100%;
+      margin: auto ;
+    }
+  }
+
+  @for $i from 1 through 6 {
+    h#{$i} {
+      @if $i == 1 {
+        font-size: 30px;
+      } @else if $i == 2 {
+        font-size: 27px;
+      } @else if $i == 3 {
+        font-size: 25px;
+      } @else if $i == 4 {
+        font-size: 22px;
+      } @else if $i == 5 {
+        font-size: 18px;
+      } @else if $i == 6 {
+        font-size: 15px;
+      }
+      margin-top: 0px;
+    }
+  }
+
+
+}
+
+/**
+ * Navegação de Categorias de Posts ( Barra Lateral -Blog )
+ */
+.categories-nav{
+  padding: 20px 0px;
+  margin-top: 20px;
+  .categories-header{
+    padding: 15px 0px 0px 0px;
+    position: relative;
+    border-top:solid 1px $cl2;
+    &:before{
+      width: 24px;
+      height: 0;
+      display: block;
+      position: absolute;
+      top: -1px;
+      left: 0;
+      border-style: solid;
+      border-width: 1px 0 0;
+      border-color: $cl2;
+      content: "";
+    }
+    .tit{
+      //@include confText($openSans, 600, 15px, $cl-purple-1, uppercase, left);
+      margin: 0px;
+    }
+  }
+  .cateogies-ul{
+    margin-top: 10px;
+    &__item{
+      padding: 5px 0px;
+      border-bottom: solid 1px $cl2;
+      a{
+        //@include confText($openSans, 300, 15px, $cl-gray-1, none, left);
+        display: block;
+        transition: all .2s ease-out;
+        &:hover{
+          transition: all .2s ease-out;
+          color: $cl2;
+          padding-left: 5px ;
+        }
+        i{
+          font-size: 8px;
+          position: relative;
+          top: -2px;
+        }
+      }
+    }
+  }
+}
+
+.tags-post{
+  padding: 20px 0px;
+  margin-bootom: 20px;
+  &-header{
+    padding: 15px 0px 0px 0px;
+    position: relative;
+    border-top:solid 1px $cl2;
+    margin-bottom: 10px ;
+    &:before{
+      width: 24px;
+      height: 0;
+      display: block;
+      position: absolute;
+      top: -1px;
+      left: 0;
+      border-style: solid;
+      border-width: 1px 0 0;
+      border-color: $cl2;
+      content: "";
+    }
+    .tit{
+      //@include confText($openSans, 600, 15px, $cl-purple-1, uppercase, left);
+      margin: 0px;
+    }
+  }
+
+  &-list{
+
+    &__item{
+      //margin: 5px 5px;
+      display: inline-flex;
+    }
+
+    a{
+      border-radius: 4px;
+      background-color: $cl2;
+     // @include confText($openSans, 300, 13px, $cl1, none, center);
+      padding: 3px;
+      margin: 5px 5px;
+    }
+  }
+
+}
+
+/**
+ * Form de pesquisa ( Barra Lateral - Blog )
+ */
+/*.form-search{
+  .form-control{
+    @include  confText($sourceSans, 300, 14px, $cl-gray-4, none, left);
+  }
+  input[type="search"]{
+    box-shadow: none;
+    outline: none;
+    height: 43px !important;
+  }
+  .input-group-btn{
+    padding:0px;
+    button{
+      background-color: $cl-brown-3;
+      border-color:$cl-brown-3;
+      border-radius:0px;
+      padding-left: 10px;
+      padding-right: 10px;
+      height: 43px;
+    }
+  }
+}*/
+
+
+/**
+ * Single Post
+ */
+.content-single-post{
+  .galeries{
+    figure{
+      height: 86px;
+    }
+  }
+  header{
+    .tit{
+      margin: 0px 0px 5px 0px;
+    }
+    .sub-tit{
+      margin: 0px 0px 20px 0px;
+      font-weight: 300;
+    }
+  }
+  iframe{
+    width: 100%;
+    height: 450px;
+  }
+  figure{
+    overflow: hidden;
+    margin-bottom: 20px;
+    a{
+      &:hover img{
+        -moz-transform: scale(1.1);
+        -webkit-transform: scale(1.1);
+        transform: scale(1.1);
+      }
+    }
+    img{
+      display: block;
+      margin: auto;
+      width: 100%;
+      height: auto;
+      -moz-transition: all 0.3s;
+      -webkit-transition: all 0.3s;
+      transition: all 0.3s;
+    }
+  }
+  .area-date{
+    display: block;
+    text-align: left;
+    border-bottom: solid 1px $cl2;
+    border-top: solid 1px $cl2;
+    padding: 10px 0px;
+    color:#a8a8a8;
+    margin-bottom: 20px;
+    font-weight: 300;
+  }
+  p{
+    //@include confText($openSans, 300, 15px, $cl3, none, justify);
+  }
+  .area-hashitag{
+    border-top:solid 1px $cl2;
+    border-bottom:solid 1px $cl2;
+    margin-top: 30px;
+    text-align: left;
+    padding: 5px 0px;
+    //@include confText($openSans, 100, 15px, $cl-gray-1, none, justify);
+    strong{
+      //@include confText($openSans, 100, 15px, $cl-gray-1, none, justify);
+      margin-left: 5px;
+    }
+  }
+
+  @for $i from 1 through 6 {
+    h#{$i} {
+      color:$cl2;
+    }
+  }
+
+
+}
+
+
+img.aligncenter{
+  display: block;
+  margin:auto;
+}
+
+img.alignleft{
+  float: left;
+  margin: 0px 15px 15px 0px;
+}
+
+img.alignright{
+  float: right;
+  margin: 0px 0px 15px 15px;
+}
+
+@media screen and (max-width: 480px){
+
+  img.alignright,img.alignleft,img.aligncenter {
+    float: none;
+    margin: auto;
+    display: block;
+    max-width: 100%;
+  }
+
+}
+
+
+ .row{         
+#oi{
+  margin:50px 0;
+  .headi{
+    margin: 0 auto;width:900px;
+    .head2{
+      float: right;
+      width:740px;
+      margin-top: -90px;
+      h3{
+        
+        font-size: 22px;
+        color: white;
+        font-family:$ft4;
+        font-stretch: expanded;
+      }
+      .acess{
+        width: 100%;
+    float: right;
+    margin: 15px 0 25px 0;
+    border-bottom: 1px dotted $cl7;
+    a{
+      float: right;
+    margin-left: 10px;
+    background-color:$cl8;
+    color:$cl1;
+    padding:9px;
+    }
+      }
+      .texto{
+        p{
+          color:$cl7;
+          font-size:15px;
+        }
+      }
+      .acess2{
+        width: 100%;
+          float: right;
+          margin: 15px 0 25px 0;
+          border-bottom: 1px dotted $cl7;
+          a{
+            float: right;
+          margin-left: 10px;
+          background-color:$cl8;
+          color:$cl1;
+          padding:9px;
+          }
+        }
+    }
+  }
+}}
+#oi{
+  margin:50px 0;
+  .headi{
+    margin: 0 auto;width:900px;
+    .head2{
+      float: right;
+      width:740px;
+      margin-top: -50px;
+      h3{
+        
+        font-size: 22px;
+        color: white;
+        font-family:$ft4;
+        font-stretch: expanded;
+      }
+      .acess{
+        width: 100%;
+    float: right;
+    margin: 15px 0 25px 0;
+    border-bottom: 1px dotted $cl7;
+    a{
+      float: right;
+    margin-left: 10px;
+    background-color:$cl8;
+    color:$cl1;
+    padding:9px;
+    }
+      }
+      .texto{
+        p{
+          color:$cl7;
+          font-size:15px;
+        }
+      }
+      .acess2{
+        width: 100%;
+          float: right;
+          margin: 15px 0 25px 0;
+          border-bottom: 1px dotted $cl7;
+          a{
+            float: right;
+          margin-left: 10px;
+          background-color:$cl8;
+          color:$cl1;
+          padding:9px;
+          }
+        }
+    }
+  }
+}
+
+.direitos{
+  background-color:#fff;
+  .col-md-12{
+  .col-md-8{
+  .reser{
+    h6{
+float: right;
+    }
+  }
+}.col-md-4{
+  .edeas{
+    h6{
+
+    }
+  }
+}
+}
+}
+
+

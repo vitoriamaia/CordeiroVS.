@@ -1,0 +1,35 @@
+<form action="<?php echo esc_url($_SERVER['REQUEST_URI']); ?>" method="post">
+    <p>
+        Para maior comodidade dos nossos clientes, disponibilizamos um sistema para acompanhamento de carga.
+        Acesse ao sistema para mais detalhes.
+    </p>
+    <p>
+        <strong>Campos com (*) são obrigatórios</strong>
+    </p>
+
+    <fieldset>
+        <legend>Entra no Sistema</legend>
+        <div class="row">
+            <div class="col-md-5">
+                <label class="legenda" for="email">E-mail*</label><br>
+                <span class="wpcf7-form-control-wrap email">
+                    <input type="email" required="required" name="email" size="40" class="form-control" id="email" placeholder="E-mail">
+                </span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-5">
+                <label class="legenda" for="senha">Senha*</label><br>
+                <span class="wpcf7-form-control-wrap senha">
+                    <input type="password" required="required" name="senha" size="40" class="form-control" id="senha" placeholder="Senha">
+                </span>
+            </div>
+        </div>
+    </fieldset>
+
+    <div class="form-contato">
+        <button type="submit" class="btn margin-zero">Entrar</button>
+    </div>
+
+    <input type="hidden" name="tracking" />
+</form>

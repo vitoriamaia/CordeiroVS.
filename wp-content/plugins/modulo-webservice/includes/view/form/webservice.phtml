@@ -1,0 +1,10 @@
+<div class="formulario_boleto">
+    <form action="<?php the_permalink() ?>" method="post">
+        <div class="div_input_formulario_boleto">
+            <input class="input_formulario_boleto" name="contrato"
+                   placeholder="Digite aqui seu número de CPF ou CNPJ" type="text">
+        </div>
+        <input type="submit" value="VISUALIZAR" class="btn_gerar_boleto">
+        <input type="hidden" name="post_request">
+    </form>
+</div>

@@ -1,0 +1,153 @@
+/*
+|----------------------------------------------
+| Header
+|----------------------------------------------
+*/
+.page {
+    .headingg {
+        height: 100px;
+    }
+}
+
+.header {
+    background-image: url(../images/bg_topo.jpg);
+
+
+    .logo, .navbar-brand, .mr-auto {
+        margin-left: 19vw;
+        animation: fadeIn 6s;
+        margin-top: 36px;
+        float: left;
+
+        &:last-child {
+            margin: 0px;
+        }
+    }
+
+    .navbar-toggler {
+        .navbar-toggler-icon {
+            margin-top: 30px;
+            float: right;
+        }
+    }
+
+    .box_contato {
+
+
+        .telefone {
+
+            .fon {
+                margin-left: 26vw;
+                font-family: "Patua One",cursive;
+                font-size: 25px;
+                position: relative;
+                color: #000000fa;
+            }
+        }
+
+        .email {
+            .email, .text-center {
+            }
+        }
+    }
+
+    .navbar, .navbar-expand-lg, .navbar-light {
+
+        .container {
+            padding-top: 50px;
+            margin-left: 12vw;
+
+            .navbar-header {
+
+                .collapse, .navbar-collapse {
+                    .navbar-nav {
+                        position: relative;
+                        width: 150px;
+
+                        li {
+                            &:last-child {
+                                margin: 0px;
+                            }
+
+                            a {
+                                padding: 10px 24px;
+                                color: #fff;
+                                animation: fadeInOut 3s;
+                                text-transform: uppercase;
+                                float: left;
+                                font-family: $ft4;
+                                font-size: 20px;
+                                white-space: nowrap;
+                                text-align: center;
+                                position: relative;
+                                right: 40pc;
+                            }
+
+                            a:hover {
+                                -moz-animation-duration: 2s;
+                                color: $cl7;
+                            }
+
+                            a:link {
+                                text-decoration: none;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+.header .box_contato .telefone .fon {
+    font-family: "Patua One",cursive;
+    font-size: 25px;
+    position: relative;
+    color: #000000fa;
+}
+
+.email, .text-center {
+    font-family: $ft5;
+    /* padding-left: 20vw; */
+    color: #000000fa;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInOut {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+
+/**
+}
+}
+
+
+    
+               
+            }
+        }
+    }
+    
+}
+}
+
+    
+    }
+}*/

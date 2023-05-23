@@ -1,0 +1,582 @@
+﻿@charset "UTF-8";
+/**
+
+** GLOBAL
+    -- animate
+    -- conponents
+    -- fonts
+    -- keyframes
+    -- mixins
+    -- normalize
+    -- placeholder
+    -- reset
+    -- variables
+
+** MODULES
+    -- bootstrap
+    -- buttons
+    -- form
+    -- helper
+    -- menu
+    -- swiper
+
+** SECTIONS
+	-- header
+	-- footer
+	-- inner content
+	-- query
+
+
+**/
+
+// **
+// GLOBAL
+// **
+@import "global/animate";
+@import "global/variables";
+@import "global/placeholder";
+@import "global/mixins";
+@import "global/reset";
+@import "global/normalize";
+@import "global/components";
+@import "global/fonts";
+
+// **
+// MODULES
+// **
+@import "modules/helpers";
+@import "modules/bootstrap";
+@import "modules/menu";
+@import "modules/form";
+@import "modules/swiper";
+@import "modules/buttons";
+
+// **
+// SECTIONS
+// **
+@import "sections/header";
+@import "modules/menu";
+@import "sections/footer";
+@import "sections/inner-content";
+
+/*
+|----------------------------------------------
+| Main Custom
+|----------------------------------------------
+*/
+
+/*body{
+  @include confText($sourceSans, 300, 15px, $cl3, none, left);
+
+  a, button{
+    transition: all .1s ease-in;
+    &:hover{
+      transition: all .1s ease-in;
+      text-decoration: none;
+    }
+  }
+}*/
+
+/**
+ * Configuração de Títulos
+ */
+.tit{
+  @for $i from 1 through 6{
+    &__#{$i}{
+      @if $i == 1{
+        font-size: 40px !important;
+      }@else if $i == 2{
+        font-size: 30px !important;
+      }@else if $i == 3{
+        font-size: 25px !important;
+      }@else if $i == 4{
+        font-size: 20px !important;
+      }@else if $i == 5{
+        font-size: 18px !important;
+      }@else if $i == 6{
+        font-size: 15px !important;
+      }
+    }
+  }
+}
+
+
+
+
+
+
+/**
+ * Mudar cor seleção
+ */
+/*::-moz-selection {color:#000; background:#d74a2c; text-shadow:none;}
+::selection {color:#000; background:#d74a2c; text-shadow:none;}*/
+
+
+*,
+*:after,
+*:before {
+  @include box-sizing(border-box);
+}
+
+/**
+ * Css micro clearfix
+ */
+.cf{@extend %clearfix}
+
+body {
+ 
+  background-image:url(../images/bg.jpg);
+  
+}
+
+
+
+
+
+// **
+// SECTIONS FOR MEDIA QUERY
+// **
+a{float: left;}
+.container{
+ 
+  .serv-tuti{
+    margin-left: 70px;
+  a{    
+    float: left;
+    .col-md-4 {
+.serv{
+  background-color: #fff;
+  padding: 4px;
+  padding-top:20px;
+    float:left;
+    .letraaa{
+      text-transform: uppercase;
+      color: black;
+      text-align: center;
+    }
+    .imagersp{
+      width:280px;
+    }
+
+  
+}}}}}
+.swiper-container {
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    margin-top: -30px;
+    padding-top: 10px;
+}
+
+.container{
+  .serv-info{
+    margin-left: 70px;
+  a{    
+    float: left;
+    .col-md-4 {
+.info{
+  
+  padding: 4px;
+  padding-top:20px;
+    float:left;
+    animation:fadeInRight 6s;
+    
+    .letraaa{
+      text-transform: uppercase;
+      color: black;
+      
+    }}
+    .imagersp{
+      width:280px;
+    }
+
+  
+}}}}
+.outer-layer {
+    margin: 5px 14px 25px;
+    //width: ~"calc((100% - 10px)/6)";
+    box-shadow: 0 0px 10px rgba(0,0,0,0.05), 0 0 3px rgba(0,0,0,0.3);
+    float: left;
+    animation: fadeInLeft 6s;
+}
+.cem-conteudo .conteudo .galeria li a img {
+    width: 320px !important;
+    height: 300px !important;
+    border: 3px solid #fff !important;
+    float: left !important;
+    right: 3.5pc !important;
+    position: relative;
+    top: -70px;
+}
+button {
+    top: -20px;
+    right: -20px;
+    position: absolute;
+    width: 320px;
+}
+    @card-width: 150px;
+    @card-height: 170px;
+
+    @import "sections/query";
+
+    @keyframes opacity {
+        from {
+            opacity: 0;
+        }
+
+        to {
+            opacity: 1;
+        }
+    }
+    /* O container geral define a perspectiva */
+    .flip-container {
+        perspective: 1000;
+        
+    }
+    /* vira os containers frente e verso quando o mouse passa em cima */
+    .flip-container:hover .flipper, .flip-container.hover .flipper {
+        transform: rotateY(180deg);
+    }
+
+    .flip-container, .front, .back {
+        width: 320px;
+        height: 300px !important;
+        float: left;
+    }
+    /* define a velocidade da transição */
+    .flipper {
+        transition: 0.6s;
+        transform-style: preserve-3d;
+        position: relative;
+    }
+    /* esconde o verso durante a animação */
+    .front, .back {
+        backface-visibility: hidden;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    /* frente posicionada sobre o verso */
+    .front {
+        z-index: 2;
+    }
+    /* verso inicialmente escondido */
+    .back {
+        transform: rotateY(180deg);
+    }
+
+    .flip-container:hover .flipper,
+    .flip-container.hover .flipper,
+    .flip-container.flip .flipper {
+        transform: rotateY(180deg);
+    }
+
+    .vertical.flip-container {
+        position: relative;
+    }
+
+    .vertical .back {
+        transform: rotateX(180deg);
+    }
+
+    .vertical.flip-container .flipper {
+        transform-origin: 100% 213.5px; /* metade da altura */
+    }
+
+    .vertical.flip-container:hover .flipper {
+        transform: rotateX(-180deg);
+    }
+
+    .flip-container {
+        perspective: 1000;
+        transform-style: preserve-3d;
+    }
+    /*  MODIFICADO! vira os containers frente e verso quando o mouse passa em cima */
+    .flip-container:hover .back {
+        transform: rotateY(0deg);
+    }
+
+    .flip-container:hover .front {
+        transform: rotateY(180deg);
+    }
+
+    .flip-container, .front, .back {
+        width: 320px;
+        height: 380px;
+    }
+    /* define a velocidade da animação */
+    .flipper {
+        transition: 0.6s;
+        transform-style: preserve-3d;
+        position: relative;
+    }
+    /* esconde o verso durante a animação */
+    .front, .back {
+        backface-visibility: hidden;
+        transition: 0.6s;
+        transform-style: preserve-3d;
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 1;
+    }
+    /*  MODIFICADO! frente posicionada sobre o fundo */
+    .front {
+        z-index: 2;
+        transform: rotateY(0deg);
+    }
+
+    .col-12 {
+        .info {
+            .imagersp {
+                .content-letter {
+                    float: right;
+
+                    .letraaa {
+                    }
+
+                    p {
+                        float: right;
+                    }
+
+                    img {
+                    }
+                }
+            }
+        }
+    }
+
+    .no-gutter > [class*='col-'] {
+        padding-right: 0;
+        padding-left: 0;
+    }
+    /**
+ * Mudar cor seleção
+ */
+    /*::-moz-selection {color:#000; background:#d74a2c; text-shadow:none;}
+::selection {color:#000; background:#d74a2c; text-shadow:none;}*/
+    *,
+    *:after,
+    *:before {
+        @include box-sizing(border-box);
+    }
+    /**
+ * Css micro clearfix
+ */
+    .cf {
+        @extend %clearfix
+    }
+    // **
+    // SECTIONS FOR MEDIA QUERY
+    // **
+    @import "sections/query";
+    /* verso inicialmente escondido *
+.back { transform: rotateY(-180deg); }    
+
+/* modificações para flip vertical   */
+    .vertical.flip-container {
+        position: relative;
+    }
+
+    .vertical .back {
+        transform: rotateX(180deg);
+    }
+
+    .vertical.flip-container:hover .back {
+        transform: rotateX(0deg);
+    }
+
+    .vertical.flip-container:hover .front {
+        transform: rotateX(180deg);
+    }
+
+    section {
+        .col-md-4 {
+            float: left;
+
+            .container {
+                max-width: 120px;
+                max-height: 300px;
+            }
+
+            .row {
+            }
+        }
+    }
+
+    .downArrow {
+        position: relative;
+        bottom: 45%;
+        display: table;
+        /* left: 700px; */
+        margin: 0 auto;
+    }
+
+    .bounce {
+        top: 1px;
+        -moz-animation: bounce 3s infinite;
+        -webkit-animation: bounce 3s infinite;
+        animation: bounce 3s infinite;
+    }
+
+    @-moz-keyframes bounce {
+        0%, 20%, 50%, 80%, 100% {
+            -moz-transform: translateY(0);
+            transform: translateY(0);
+        }
+
+        40% {
+            -moz-transform: translateY(-30px);
+            transform: translateY(-30px);
+        }
+
+        60% {
+            -moz-transform: translateY(-15px);
+            transform: translateY(-15px);
+        }
+    }
+
+    @-webkit-keyframes bounce {
+        0%, 20%, 50%, 80%, 100% {
+            -webkit-transform: translateY(0);
+            transform: translateY(0);
+        }
+
+        40% {
+            -webkit-transform: translateY(-30px);
+            transform: translateY(-30px);
+        }
+
+        60% {
+            -webkit-transform: translateY(-15px);
+            transform: translateY(-15px);
+        }
+    }
+
+    @keyframes bounce {
+        0%, 20%, 50%, 80%, 100% {
+            -moz-transform: translateY(0);
+            -ms-transform: translateY(0);
+            -webkit-transform: translateY(0);
+            transform: translateY(0);
+        }
+
+        40% {
+            -moz-transform: translateY(-30px);
+            -ms-transform: translateY(-30px);
+            -webkit-transform: translateY(-30px);
+            transform: translateY(-30px);
+        }
+
+        60% {
+            -moz-transform: translateY(-15px);
+            -ms-transform: translateY(-15px);
+            -webkit-transform: translateY(-15px);
+            transform: translateY(-15px);
+        }
+    }
+    /* Demo Purpose Only*/
+    .demo {
+        font-family: $ft4;
+        color: black;
+        display: block;
+        margin: 0 auto;
+        padding: 15px 0;
+        text-align: center;
+    }
+
+    .demo a {
+        font-family: 'Raleway', sans-serif;
+        color: #2ecc71;
+    }
+
+    .cem-conteudo {
+        margin: 50px 0;
+        width: 100%;
+
+        .conteudo {
+            margin: 0 auto;
+            width: 900px;
+
+            .galeria {
+                float: left;
+
+                li {
+                    float: left;
+
+                    a {
+                        float: left;
+                        margin-right: 25px;
+                        width: 280px;
+                        position: relative;
+
+                        img {
+                            width: 280px;
+                            height: 185px;
+                            border: 3px solid #fff;
+                            float: left;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    div {
+        display: block;
+    }
+
+    ul, menu, dir {
+        display: block;
+        list-style-type: disc;
+        margin-block-start: 1em;
+        margin-block-end: 1em;
+        margin-inline-start: 0px;
+        margin-inline-end: 0px;
+        padding-inline-start: 40px;
+    }
+
+    h2 {
+        text-align: center;
+    }
+
+    @keyframes fadeInLeft {
+        from {
+            opacity: 0;
+            -webkit-transform: translate3d(-100%, 0, 0);
+            transform: translate3d(-100%, 0, 0);
+        }
+
+        to {
+            -webkit-transform: none;
+            transform: none;
+        }
+    }
+
+    .fadeInLeft {
+        -webkit-animation-name: fadeInLeft;
+        animation-name: fadeInLeft;
+    }
+
+    @keyframes fadeInRight {
+        from {
+            opacity: 0;
+            -webkit-transform: translate3d(100%, 0, 0);
+            transform: translate3d(100%, 0, 0);
+        }
+
+        to {
+            -webkit-transform: none;
+            transform: none;
+        }
+    }
+
+    .fadeInRight {
+        -webkit-animation-name: fadeInRight;
+        animation-name: fadeInRight;
+    }
+
+    h1 {
+        text-align: center;
+    }

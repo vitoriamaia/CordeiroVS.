@@ -1,0 +1,39 @@
+<?php
+
+if (!defined('ABSPATH')) {
+    exit; // Exit if accessed directly
+}
+
+$regions = apply_filters('select_table', 'regions');
+if ($regions) : ?>
+
+    <h2 id="titulo-fatura">Regiões Registradas</h2>
+
+    <?php foreach ($regions as $result) : ?>
+
+        <form class="register_regions" action="<?php echo admin_url('admin-ajax.php?action=save_regions'); ?>" method="post" accept-charset="utf-8">
+            <input type="text" name="regioes" class="regioes" value="<?php echo $result->regioes ?>" required="required" readonly="readonly" />
+            <input type="button" class="button edit" value="editar" />
+            <input type="button" class="button save" value="Salvar" />
+            <input type="hidden" name="id" value="<?php echo $result->id; ?>">
+            <a href="<?php echo admin_url("admin-ajax.php?action=delete_reg&table=" . $_GET['tab'] . "&id=$result->id") ?>" class="button delete" onclick="return confirm('Deseja realmente Excluir este registro?')">delete</a>
+        </form>
+
+    <?php endforeach; ?>
+
+<?php else : ?>
+
+    <p class="no-found">Nenhuma Região Cadastrada.</p>
+
+<?php endif; ?>
+
+<form action="<?php echo admin_url('admin-ajax.php?action=save_regions'); ?>" method="post" accept-charset="utf-8">
+    <p>
+        <label for="regioes">Cadastrar Nova Região</label> <br/>
+        <input type="text" name="regioes" id="regioes" value="" required="required"/>
+    </p>
+
+    <p>
+        <input type="submit" class="button" value="Incluir Nova Região"/>
+    </p>
+</form>

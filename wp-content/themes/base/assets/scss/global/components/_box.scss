@@ -1,0 +1,21 @@
+/*
+|----------------------------------------------
+| Components
+|----------------------------------------------
+*/
+
+// vertical middle => 'servicos'
+.box {
+  display: inline-table;
+  height: 150px;
+  width: 100%;
+  text-align: center;
+  &__item {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center
+  }
+  &__img {
+    margin: 0 auto;
+  }
+}

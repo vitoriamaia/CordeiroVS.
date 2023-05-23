@@ -1,0 +1,45 @@
+<?php
+
+if ( ! defined( 'ABSPATH' ) ) {
+    exit; // Exit if accessed directly
+}
+
+use application\View;
+
+$view = new View\View();
+
+?>
+
+<div class="wrap">
+
+    <?php
+
+    $tabs = array(
+        'unities' => 'Cadastro de unidades',
+        'regions' => 'Cadastro de Regiões'
+    );
+
+    $tab = (isset ($_GET['tab'])) ? $_GET['tab'] : 'unities';
+
+    ?>
+
+    <div class="wrap">
+
+        <h2>Cadastro de unidades</h2>
+
+        <?php if (isset($_GET['msg'])) echo $view->msg_alert($_GET['msg']); ?>
+
+        <h2 class="nav-tab-wrapper">
+            <?php
+            foreach ($tabs as $tab_index => $name) {
+                $class = ($tab_index == $tab) ? 'nav-tab-active' : '';
+                echo "<a class='nav-tab $class' href='?page=unities&tab=$tab_index'>$name</a>";
+            }
+            ?>
+        </h2>
+
+        <?php echo $view->render('templates/' . $tab); ?>
+
+    </div>
+
+</div>

@@ -1,0 +1,22 @@
+/* Estilos Filtro */
+table.dataTable thead .sorting_asc{background: url("../images/sort_asc.png") no-repeat center right #ababab;}
+table.dataTable thead .sorting_desc{background: url("../images/sort_desc.png") no-repeat center right #ababab;}
+table.dataTable thead .sorting{background: url("../images/sort_both.png") no-repeat center right #ababab;}
+
+table.dataTable thead .top-table{width: 150px; height: 50px; vertical-align: middle;}
+
+#DataTables_Table_0_wrapper{margin-top: 35px;}
+.data{width: 910px;}
+.data td{padding-left: 10px;}
+.data .top-data{border-top: 3px double; border-bottom: 1px solid; padding: 5px;}
+.data .odd{background: #d5d5d5}
+.data .even{background: #ddd}
+
+.dataTables_filter input[type='search']{display: block; margin-bottom: 15px;}
+
+/* Estilos gerais */
+.wp-core-ui .register_unity{margin: 10px 0;}
+
+.register_form{background: #dedede; padding: 10px 10px 10px 25px;}
+.register_form select,
+.register_form input{width: 265px; height: 40px;}

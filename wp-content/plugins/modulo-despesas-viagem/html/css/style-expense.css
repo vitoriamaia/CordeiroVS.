@@ -1,0 +1,81 @@
+/* Mensagens de Aviso */
+.form_expense .msg{width: 570px; font-size: 13px; padding: 10px; font-weight: bold;}
+.form_expense .msg_erro{border: 1px solid #ff0000;}
+.form_expense .msg_ok{border: 1px solid #007700;}
+
+/* Botão de Cadastro */
+a.cadastrar{width: 265px; margin: 10px 0; padding: 5px 0; font-size: 14px; text-align: center; background: #007700; cursor: pointer; border-radius: 5px; display: block; color: #fff; text-decoration: none;}
+a.cadastrar:hover{color: #ddd;}
+
+/* Formulários */
+.form-expense{width: 385px; padding: 20px; background: white; display: none; clear: both;}
+.input-expense{width: 370px; height: 30px;}
+.input-expense-id{width: 40px; height: 30px; line-height: 30px; text-align: center;}
+.expense .salvar{display: none;}
+
+.expense-table{width: 910px;}
+	.expense-table td{padding-left: 10px;}
+	.expense-table .top-table-expense{border-top: 3px double; border-bottom: 1px solid; padding: 5px;}
+
+/* Calendário */
+.form-expense .datas{width: 175px; padding-left: 10px;}
+.form-expense #push{width: 80px; cursor: pointer;}
+
+#ui-datepicker-div{border: 1px solid #eee; background: white; padding: 10px; display: none;}
+.ui-datepicker-header .ui-datepicker-prev{font-weight: bold; font-size: 15px; color: #00a; cursor: pointer; margin-left: 10px; float: left;}
+.ui-datepicker-header .ui-datepicker-next{font-weight: bold; font-size: 15px; color: #00a; cursor: pointer; margin-right: 10px; float: right;}
+.ui-datepicker-header .ui-datepicker-title{padding: 5px 0 30px 0; clear: both;}
+.ui-datepicker-header .ui-datepicker-month{width: 115px; height: 25px; float: left;}
+.ui-datepicker-header .ui-datepicker-year{width: 115px; height: 25px; float: right;}
+.ui-datepicker-calendar th{padding: 3px;}
+.ui-datepicker-calendar td{padding: 7px; text-align: center; border: 1px solid #eee;}
+.ui-datepicker-calendar td a{text-decoration: none; color: #20243d;}
+
+/* Formulário de Gastos */
+#titulo-despesa{width: 910px; text-align: center;}
+
+.despesa{width: 910px; clear: both;}
+	.despesa .titulo-despesa{padding: 10px; font-size: 16px; text-align: center; background: #bfbfbf; margin: 10px 0; border-radius: 5px;}
+	.despesa .body_despesa{margin-bottom: 50px;}
+		.despesa .descr-despesa{text-align: center;}
+		.despesa .item-descr{width: 130px; float: left; font-size: 15px; font-weight: bold;}
+		.despesa .group-descr{height: 32px; line-height: 32px; clear: both;}
+			.linha-preta{background: #d5d5d5}
+			.linha-branca{background: #ddd}
+		.despesa .result-descr{width: 130px; height: 30px; overflow: hidden; float: left; text-align: center;}
+		.despesa .total{font-size: 13px; font-weight: bold;}
+		.despesa .delete{font-size: 11px; text-decoration: none; text-transform: uppercase; color: #bb0000;}
+
+.form-cadastro{width: 560px; padding: 20px; background: white; display: none;}
+
+.invoice_wrap .datas{width: 175px; padding-left: 10px;}
+.invoice_wrap #push{width: 80px; cursor: pointer;}
+
+.item_despesa strong{width: 120px; height: 30px; line-height: 30px; float: left; display: block;}
+input.item_despesa{width: 245px; height: 30px; padding: 0 10px;}
+
+.itens_despesa_title .salvar{display: none;}
+
+.rodape{display: none;}
+
+/* Estilos Filtro */
+table.dataTable thead .sorting_asc{background: url("../images/sort_asc.png") no-repeat center right;}
+table.dataTable thead .sorting_desc{background: url("../images/sort_desc.png") no-repeat center right;}
+table.dataTable thead .sorting{background: url("../images/sort_both.png") no-repeat center right;}
+
+@media print{
+	html{background: #fff;}
+	.update-nag, .nav-tab-wrapper, #wpfooter, #adminmenuwrap, #adminmenuback, #wpadminbar, .button, .msg, .no-print{display: none !important;}
+	.form_expense h2{text-align: center;}
+	#wpcontent{margin-left: 0px;}
+	#titulo-despesa{border: 3px double #000; margin: 15px 0;}
+	.despesa{width: 931px;}
+	.despesa .item-descr{width: 131px; height: 35px; line-height: 35px; border: 1px solid #000;}
+	.despesa .result-descr{width: 133px; height: 35px; border-bottom: 1px solid;}
+	.despesa .historico{overflow: auto; width: 260px; height: 35px;}
+	.despesa .total{height: 30px;}
+	.print{margin-top: 70px; display: block; position: relative;}
+	.signature{width: 300px; text-align: center; border-top: 1px solid; margin-top: 70px;}
+	.line{width: 178px; height: 1px; display: block; position: absolute; top: 20px; border-bottom: 1px solid; right: -180px;}
+	.importancia{position: absolute; top: 50px; right: 190px;}
+}

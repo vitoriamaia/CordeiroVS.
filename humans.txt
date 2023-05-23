@@ -1,0 +1,29 @@
+# humanstxt.org/
+# Desenvolvido por E-deas Web
+/* TEAM */
+
+Ag: E-deas
+Diretor: Kelsen Pontes
+http://e-deas.com.br/
+
+
+Site: http://.com.br/
+
+Front-end: 
+E-mail: 
+
+Back-end:
+E-mail: 
+
+Equipe E-deas
+Diego - UX Design, designer de interfaces e front
+Neles - Back/Front
+Tiago - Back
+
+/* SITE */
+
+Last update: 09/03/2017
+Standards: HTML5, CSS3, WP, PHP
+Components: Gulp, jQuery, SASS/Compass
+Software: Brackets, Photoshop, NinjaMock, Php Storm
+

@@ -1,0 +1,16 @@
+/* Estilos Filtro */
+table.dataTable thead .sorting_asc{background: url("../image/sort_asc.png") no-repeat center right;}
+table.dataTable thead .sorting_desc{background: url("../image/sort_desc.png") no-repeat center right;}
+table.dataTable thead .sorting{background: url("../image/sort_both.png") no-repeat center right;}
+
+/* Tabela Cupom */
+#DataTables_Table_0_wrapper{margin-top: 35px;}
+.coupon-table{width: 910px;}
+.coupon-table td{padding-left: 10px;}
+.coupon-table .top-coupon-table{border-top: 3px double; border-bottom: 1px solid; padding: 5px;}
+.coupon-table .odd{background: #d5d5d5}
+.coupon-table .even{background: #ddd}
+
+/* Estilo Meses */
+.months .period{ margin: 20px 0 5px; }
+.months .link{ margin-right: 10px; }

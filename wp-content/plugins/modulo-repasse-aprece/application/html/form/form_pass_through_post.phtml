@@ -1,0 +1,145 @@
+<?php
+
+$controller = MPThrough();
+
+$select = $controller->get_wherewithal();
+$months = $controller->get_months();
+$data_attributes = $controller->get_data_attributes();
+
+$prefecture = $data_attributes['prefecture'];
+$month = $data_attributes['month'];
+$year = $data_attributes['year'];
+$type = $data_attributes['type'];
+$typeExt = $data_attributes['typeExt'];
+
+if ($select) : ?>
+
+    <div class="financasp">
+
+        <p>Você pesquisou por: </p>
+
+        <?php if(empty($prefecture)): ?>
+            <h3>Prefeitura: <strong>Todas as Prefeituras</strong></h3>
+        <?php else: ?>
+            <h3>Prefeitura: <strong><?php echo $select[0]->nome; ?></strong></h3>
+        <?php endif; ?>
+
+
+        <h3>Tipo de Repasse: <strong><?php echo $typeExt; ?></strong></h3>
+
+        <?php if(!empty($month) && !empty($year)) : ?>
+            <h3>Período: <strong><?php echo $months[$month]; ?> de <?php echo $year; ?></strong></h3>
+        <?php elseif(!empty($month)) : ?>
+            <h3>Mês: <strong><?php echo $months[$month]; ?></strong> </h3>
+        <?php elseif(!empty($year)) : ?>
+            <h3>Ano: <strong><?php echo $year; ?></strong> </h3>
+        <?php else : ?>
+            <h3>Período: <strong>Todos os Períodos</strong></h3>
+        <?php endif; ?>
+
+    </div>
+
+    <table border="0" cellpadding="1" cellspacing="1" class="table">
+        <tbody>
+
+        <tr valign="middle" border="0">
+            <?php if($type == "2"){ ?>
+                <td height="22" colspan="5" border="0" class="top-parc">
+                    <strong>Repasse: <?php echo $typeExt; ?></strong>
+                </td>
+            <?php } else if($prefecture == ""){ ?>
+                <td height="22" colspan="7" border="0" class="top-parc">
+                    <strong>Repasse: <?php echo $typeExt; ?></strong>
+                </td>
+            <?php } else { ?>
+                <td height="22" colspan="6" border="0" class="top-parc">
+                    <strong>Repasse: <?php echo $typeExt; ?></strong>
+                </td>
+            <?php } ?>
+        </tr>
+
+        <?php if($prefecture == ""){ ?>
+            <?php $a=1; $b=1; foreach ($select as $selected) { ?>
+                <?php if($a==1){ ?>
+                    <tr valign="middle">
+                        <td class="top-parc top-prefeitura">Prefeitura</td>
+                        <td class="top-parc aling">1ª parcela</td>
+                        <td class="top-parc aling">2ª parcela</td>
+                        <td class="top-parc aling">3ª parcela</td>
+                        <?php if($type == "1") { ?>
+                            <td class="top-parc aling">4ª parcela</td>
+                            <td class="top-parc aling">5ª parcela</td>
+                        <?php } ?>
+                        <td class="top-parc aling">Total</td>
+                    </tr>
+                <?php } ?>
+
+                <tr valign="middle" class="<?php if($b==1){echo 'blank';} else if ($b==2){echo 'middle';} ?>">
+                    <?php
+                    $parcelas = array(
+                        $selected->parcela1,
+                        $selected->parcela2,
+                        $selected->parcela3,
+                        $selected->parcela4,
+                        $selected->parcela5
+                    ); ?>
+                    <td class="top-prefeitura"><?php echo $selected->nome; ?></td>
+                    <td class="aling"><?php echo $controller->num_am2br($parcelas[0]) ?></td>
+                    <td class="aling"><?php echo $controller->num_am2br($parcelas[1]) ?></td>
+                    <td class="aling"><?php echo $controller->num_am2br($parcelas[2]) ?></td>
+                    <?php if($type == "1") { ?>
+                        <td class="aling"><?php echo $controller->num_am2br($parcelas[3]) ?></td>
+                        <td class="aling"><?php echo $controller->num_am2br($parcelas[4]) ?></td>
+                    <?php } ?>
+                    <td class="aling"><?php echo $controller->num_am2br(array_sum($parcelas)) ?></td>
+                </tr>
+                <?php $a++; $b++; if($b==3){$b=1;} } ?>
+
+        <?php } else { ?>
+            <?php foreach ($select as $selected) { ?>
+
+                <tr valign="middle" border="0">
+                    <td height="22" colspan="6" border="0" class="mes">
+                        <strong><?php echo $months[$selected->mes] . "/" . $selected->ano; ?></strong>
+                    </td>
+                </tr>
+                <tr valign="middle">
+                    <td class="top-parc">1ª parcela</td>
+                    <td class="top-parc">2ª parcela</td>
+                    <td class="top-parc">3ª parcela</td>
+                    <?php if($type == "1") { ?>
+                        <td class="top-parc aling">4ª parcela</td>
+                        <td class="top-parc aling">5ª parcela</td>
+                    <?php } ?>
+                    <td class="top-parc">Total</td>
+                </tr>
+
+                <tr valign="middle" class="blank">
+                    <?php
+                    $parcelas = array(
+                        $selected->parcela1,
+                        $selected->parcela2,
+                        $selected->parcela3,
+                        $selected->parcela4,
+                        $selected->parcela5
+                    ); ?>
+                    <td><?php echo $controller->num_am2br($parcelas[0]) ?></td>
+                    <td><?php echo $controller->num_am2br($parcelas[1]) ?></td>
+                    <td><?php echo $controller->num_am2br($parcelas[2]) ?></td>
+                    <?php if($type == "1") { ?>
+                        <td><?php echo $controller->num_am2br($parcelas[3]) ?></td>
+                        <td><?php echo $controller->num_am2br($parcelas[4]) ?></td>
+                    <?php } ?>
+                    <td><?php echo $controller->num_am2br(array_sum($parcelas)) ?></td>
+                </tr>
+
+            <?php } ?>
+        <?php } ?>
+
+        </tbody></table>
+
+<?php else : ?>
+
+    <p class="frase-repasse">Nenhum repasse foi encontrado para o per&iacute;odo.</p>
+
+<?php endif; ?>

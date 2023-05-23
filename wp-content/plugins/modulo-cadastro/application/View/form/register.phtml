@@ -1,0 +1,404 @@
+<form action="<?php echo admin_url('admin-ajax.php?action=create_new_user'); ?>" method="post" id="form-contact-agel">
+
+    <fieldset>
+
+        <legend>Dados Pessoais</legend>
+
+        <div class="row">
+
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label for="associado">Nome do Associado AGEL que o indicou</label><br>
+                    <span class="associado">
+                        <input type="text" name="quem_indicou" size="40" class="form-control" id="associado"
+                               placeholder="Nome do Associado">
+                    </span>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="row">
+
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label for="name">Nome Completo *</label><br>
+                    <span class="name">
+                        <input type="text" name="nome" size="40" class="form-control name" id="name" placeholder="Nome"
+                               required="required">
+                    </span>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="row">
+
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="rg"> Identidade (RG) *</label><br>
+                    <span class="rg">
+                        <input type="text" name="rg" size="40" class="form-control rg" id="rg" placeholder="Identidade"
+                               required="required">
+                    </span>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="cpf">CPF *</label><br>
+                    <span class="cpf">
+                        <input type="text" name="cpf" size="40" class="form-control cpf" id="cpf" placeholder="CPF">
+                    </span>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="row">
+
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="nascimento">Data de Nascimento *</label><br>
+                    <span class="nascimento">
+                        <input type="text" name="nascimento" size="40" class="form-control birth" id="nascimento"
+                               placeholder="Data de Nascimento" required="required">
+                    </span>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="estado_civil">Estado Civil</label><br>
+                    <span class="estado_civil">
+                        <select name="estado_civil" class="wpcf7-select form-control estado_civil" id="estado_civil">
+                            <option value="Solteiro(a)" selected="selected">Solteiro(a)</option>
+                            <option value="Casado(a)">Casado(a)</option>
+                            <option value="Divorciado(a)">Divorciado(a)</option>
+                            <option value="Outros(a)">Outros(a)</option>
+                        </select>
+                    </span>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="sexo">Sexo</label><br>
+                    <span class="sexo">
+                        <select name="sexo" class="wpcf7-select form-control sexo" id="sexo" required="required">
+                            <option value="Masculino">Masculino</option>
+                            <option value="Femenino">Femenino</option>
+                        </select>
+                    </span>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label for="address-c">Endereço para correspondência *</label><br>
+                    <span class="address-c">
+                        <input type="text" name="endereco-correspondencia" size="40" class="form-control address-c"
+                               id="address-c" placeholder="Endereço para correspondência" required="required">
+                    </span>
+                </div>
+            </div>
+        </div>
+
+    </fieldset>
+
+    <fieldset>
+
+        <legend>Contatos</legend>
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label for="email">Email *</label><br>
+                    <span class="email">
+                        <input type="email" name="email" size="40" class="form-control email" id="email"
+                               placeholder="Email" required="required">
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="telefone">Telefone</label><br>
+                    <span class="telefone">
+                        <input type="text" name="telefone" size="40" class="form-control phone"
+                               id="telefone" placeholder="Telefone">
+                    </span>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="celular">Celular *</label><br>
+                    <span class="celular">
+                        <input type="text" name="celular" size="40" class="form-control cel" id="celular"
+                               placeholder="Celular" required="required">
+                    </span>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <label for="auth-email">Autorizo a utilização de meu email pessoal para:</label><br>
+                <span class="option-one">
+                    <span class="wpcf7-checkbox option-one" id="option-one">
+
+                        <span class="wpcf7-list-item first">
+                            <input type="checkbox" name="email-pessoal-check[]" checked="checked"
+                                   value="grupo_pessoal">&nbsp;
+                            <span class="wpcf7-list-item-label">
+                                Recebimento de e-Mails do Grupo de discussão da AGEL
+                            </span>
+                        </span>
+
+                        <span class="wpcf7-list-item">
+                            <input type="checkbox" name="email-pessoal-check[]" checked="checked"
+                                   value="patrocinadores_pessoal">&nbsp;
+                            <span class="wpcf7-list-item-label">
+                                Recebimento de e-Mails de Patrocinadores e Apoiadores da AGEL
+                            </span>
+                        </span>
+
+                    </span>
+                </span>
+            </div>
+        </div>
+
+        <br/>
+
+    </fieldset>
+
+    <fieldset>
+
+        <legend>Informações Profissionais</legend>
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label for="empresa">Empresa *</label><br>
+                    <span class="empresa">
+                        <input type="text" name="empresa" required="required" size="40" class="form-control empresa"
+                               id="empresa" placeholder="Empresa">
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <p>
+                    <label>Cargo *</label><br>
+                    <span class="cargo-corporativo">
+                        <span class="wpcf7-radio cargo-corporativo" id="cargo-corporativo">
+
+                            <span class="wpcf7-list-item first">
+                                <input type="radio" name="cargo-corporativo" checked="checked" value="Diretor">&nbsp;
+                                <span class="wpcf7-list-item-label">Diretor</span>
+                            </span>
+
+                            <span class="wpcf7-list-item">
+                                <input type="radio" name="cargo-corporativo" value="Gerente">&nbsp;
+                                <span class="wpcf7-list-item-label">Gerente</span>
+                            </span>
+
+                            <span class="wpcf7-list-item">
+                                <input type="radio" name="cargo-corporativo" value="Coordenador">&nbsp;
+                                <span class="wpcf7-list-item-label">Coordenador</span>
+                            </span>
+
+                            <span class="wpcf7-list-item last">
+                                <input type="radio" name="cargo-corporativo" value="Outro">&nbsp;
+                                <span class="wpcf7-list-item-label">Outro</span>
+                            </span>
+
+                        </span>
+                    </span>
+                </p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label for="address-empresa">Endereço da Empresa</label><br>
+                    <span class="address-empresa">
+                        <input type="text" name="endereco-empresa" size="40" class="form-control address-empresa"
+                               id="address-empresa" placeholder="Endereço Empresa">
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="telefone-comercial">Telefone Comercial</label><br>
+                    <span class="telefone-comercial">
+                        <input type="text" name="telefone-comercial" size="40" class="form-control phone-comercial"
+                               id="telefone-comercial" placeholder="Telefone Comercial">
+                    </span>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="ramal">Ramal</label><br>
+                    <span class="ramal">
+                        <input type="text" name="ramal" size="40" class="form-control ramal" id="ramal"
+                               placeholder="Ramal">
+                    </span>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="email-comercial">Email Comercial *</label><br>
+                    <span class="email-comercial">
+                        <input type="email" name="email-comercial" size="40" class="form-control email-comercial"
+                               id="email-comercial" placeholder="Email Comercial" required="required">
+                    </span>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <label for="auth-email">Autorizo a utilização de meu email corporativo para:</label><br>
+                <span class="option-one">
+                    <span class="wpcf7-checkbox option-one" id="option-one">
+
+                        <span class="wpcf7-list-item first">
+                            <input type="checkbox" name="email-corporativo-check[]" checked="checked"
+                                   value="grupo_corporativo">&nbsp;
+                            <span class="wpcf7-list-item-label">
+                                Recebimento de e-Mails do Grupo de discussão da AGEL
+                            </span>
+                        </span>
+
+                        <span class="wpcf7-list-item">
+                            <input type="checkbox" name="email-corporativo-check[]" checked="checked"
+                                   value="patrocinadores_corporativo">&nbsp;
+                            <span class="wpcf7-list-item-label">
+                                Recebimento de e-Mails de Patrocinadores e Apoiadores da AGEL
+                            </span>
+                        </span>
+
+                    </span>
+                </span>
+            </div>
+        </div>
+
+        <br/>
+
+        <div class="row">
+
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="ramo">Ramo de Atividade da Empresa *</label><br>
+                    <span class="ramo">
+                        <input type="text" name="ramo" size="40" class="form-control ramo" id="ramo"
+                               placeholder="Ramo de Atividade da Empresa" required="required">
+                    </span>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="quantidade-matriz">Quantidade de Matriz/Filiais</label><br>
+                    <span class="quantidade-matriz">
+                        <input type="text" size="5" name="quantidade-matriz" class="form-control quantidade-matriz"
+                               id="quantidade-matriz" placeholder="Quantidade de Matriz/Filiais">
+                    </span>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="row">
+
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="setor"> Setor *</label><br>
+                    <span class="setor">
+                        <select name="setor" class="wpcf7-select form-control setor" id="setor">
+                            <option value="Privado">Privado</option>
+                            <option value="Público">Público</option>
+                            <option value="ONG">ONG</option>
+                        </select>
+                    </span>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="faturamento">Faturamento Anual</label><br>
+                    <span class="faturamento">
+                        <select name="faturamento" class="wpcf7-select form-control faturamento" id="faturamento">
+                            <option value="até R$ 1.000.000">até R$ 1.000.000</option>
+                            <option value="R$ 1.000.001 até R$ 30.000.000">R$ 1.000.001 até R$ 30.000.000</option>
+                            <option value="R$ 30.000.001 até R$ 200.000.000">R$ 30.000.001 até R$ 200.000.000</option>
+                            <option value="R$ 200.000.001 até R$ 1.000.000.000">R$ 200.000.001 até R$ 1.000.000.000
+                            </option>
+                            <option value="acima de R$ 1.000.000.001">acima de R$ 1.000.000.001</option>
+                        </select>
+                    </span>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label for="qtd-funcionarios">Quantidade de Funcionários</label><br>
+                    <span class="qtd-funcionarios">
+                        <input type="text" size="5" name="qtd-funcionarios" class="form-control qtd-funcionarios"
+                               id="qtd-funcionarios" placeholder="Quantidade de Funcionários">
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <label>
+                    <br/>
+                    Me responsabilizo pela veracidade das informações fornecidas, sob pena de não aprovação do cadastro
+                    e/ou desligamento posterior do quadro de associados da AGEL-CE *<br/>
+                </label>
+                <br/>
+                <label>
+                    <br/>
+                    <span class="aceita">
+                        <input type="checkbox" required="required" name="aceita" value="1"
+                               class="wpcf7-acceptance aceita" id="aceita">
+                    </span>
+                    <small>Termo de responsabilidade pelas informações fornecidas.</small>
+                    <br/>
+                </label>
+            </div>
+        </div>
+
+    </fieldset>
+
+    <div class="row">
+        <div class="col-md-12">
+            <input type="submit" value="Cadastrar" class="btn btn-primary button-send">
+        </div>
+    </div>
+
+</form>

@@ -1,0 +1,168 @@
+/*
+|----------------------------------------------
+| Form
+|----------------------------------------------
+*/
+.form-control, .select2-selection--single{
+	//border: 0$imp;
+	border-radius: 0$imp;
+	font: ft-convert(14) $ft1;
+	padding-top:10px;
+	padding-bottom:10px;
+	height: inherit$imp;
+}
+
+
+
+
+.select2-selection__arrow{
+	top:11px $imp;
+}
+
+
+
+.textarea{
+	height: 250px$imp;
+}
+
+.input-group{
+  .btn{
+    background: $cl2;
+    border-color: $cl2;
+  }
+  .form-control{
+    font: ft-convert(16) $ft2;
+  }
+}
+
+.wpcf7-form, .form{
+  margin-top:25px;
+  .button{
+    margin-top:10px;
+    border:0;
+  }
+  &__item--padding{
+    // padding-top:10px;
+    // padding-bottom:10px;
+    font: ft-convert(16) $ft1;
+  }
+  &__item--padding2{
+    height:42px;
+    font: ft-convert(16) $ft2;
+  }
+}
+
+.bts__bt--form{
+  margin-top: 10px;
+  font: ft-convert(16) $ft2;
+  border: 0 !important;
+}
+
+
+.wpcf7{
+  width: 100%;
+  position: relative;
+}
+
+.legenda{
+  font:ft-convert(18) $ft1;
+  color: $cl1 ;
+}
+label{
+  margin-top:15px;
+}
+
+.curriculo{
+  font-size:.78em;
+}
+.opc{
+  margin:25px 0;
+  .wpcf7-list-item-label{
+    font:$t-m $ft1;
+  }
+  .last{
+    margin-left:15px;
+  }
+}
+
+//**
+// form de pesquinsa no header
+//**
+.form-search-main{
+	position: relative;
+	input[type="search"]{
+		border:0;
+		background: $cl2;
+		font: ft-convert(14) $ft2;
+		height: 40px;
+		width: 100%;
+		padding: 0px 10px;
+		outline: none;
+	}
+	button[type="submit"]{
+		padding: 10px;
+		background: transparent;
+		border: none;
+		color: $cl1 ;
+		position: absolute;
+		right:10px;
+		top:0;
+	}
+}
+
+
+.navbar-default .navbar-form {
+    border-color:transparent;
+}
+
+/*
+.form-contato .bt{
+    background: $cl3; float: right;
+    &:hover{
+        background:$cl2;
+    }
+    &:active{
+    background:$cl3;
+  }
+}*/
+
+
+
+
+/* Tooltipes Formulário */
+div.wpcf7-validation-errors {
+  border:0!important
+}
+
+
+
+span.wpcf7-not-valid-tip, .error-validacao{
+  /*color:$cl-gold!important;
+  font:ft-convert(14) $ft1;
+  display: block;*/
+@extend .bts__bt--danger;	
+}
+
+
+div.wpcf7-response-output {
+  //    display: none!important;
+  font:ft-convert(14) $ft1;
+  clear: both;
+  color:$cl2!important;
+}
+
+div.wpcf7-mail-sent-ok {
+  border:0!important;
+  color: $cl2!important;
+  background:$cl1!important;
+}
+
+div.wpcf7-response-output{	
+color: #222$imp;
+	@extend .bts__bt--danger;
+border: 0;
+padding: 15px$imp;
+font:ft-convert(16) $ft1;
+margin: 7px 0 15px;
+	
+}
